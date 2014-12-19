@@ -1,0 +1,57 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<div class="ball" id="ball1"></div>
+		<span class="ball" id="ball2"></span>
+		<style>
+			.ball{
+				top:200px;
+				left:100px;
+				position: relative;
+				border:3px solid blue;
+				width:80px;
+				height:80px;
+				border-radius:99em;
+				display: inline-block;
+				background:rgba(255,255,0,0.9);
+			}
+			.ball:hover{
+				background:rgba(255,255,0,0.3);
+			}
+			#ball2{
+				left:800px;
+			}
+		</style>
+		<script>
+			var x1=100;
+			var x2=800;
+			var speed=10;
+			var time=0;
+			window.onload=function(){
+				var ball1=document.getElementById("ball1");
+				var ball2=document.getElementById("ball2");
+				setInterval('bump()',80);
+			}
+			function bump()
+			{
+				if(x1<=410)
+				{	
+					time++;
+					x1=x1+speed;
+					x2=x2-speed;
+					speed=speed+10;
+					ball1.style.left=x1;
+					ball2.style.left=x2;
+				}
+				if(time==8)
+				{
+					clearInterval('bump()');
+					ball1.style.left=x1-8;
+					ball2.style.left=x2+8;
+				}
+			}
+		</script>
+	</body>
+</html>
