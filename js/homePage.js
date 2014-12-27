@@ -12,9 +12,15 @@ window.onload = function() {
     var myMenu_con = document.getElementById("acc_opt");
     // var test = document.getElementById("testBtn");
     var card = document.getElementById("card");
-var dialog0;
+    var bar1 = document.getElementById("bar1");
+    var bar2 = document.getElementById("bar2");
+    var t = document.getElementById("t");
+
+    var t0 = document.getElementById("t0");
+    var dialog0;
     var userN;
     var userN2;
+    var friendsData;
     document.onclick = function(event) {
         var e = event || window.event;
         var elem = e.srcElement || e.target;
@@ -48,13 +54,13 @@ var dialog0;
                     cssClass: 'btn-primary',
                     action: function(dialog) {
                         fbLogin();
-                        dialog0=dialog;
+                        dialog0 = dialog;
                     }
                 }, {
                     label: 'Cancel',
                     cssClass: 'btn-cancel',
                     action: function(dialog) {
-                      dialog.close();
+                        dialog.close();
                     }
                 }
 
@@ -66,42 +72,66 @@ var dialog0;
     askBtn.onclick = function() {
         if (logined) {
             bootbox.dialog({
-                title: "TO ask a question.",
+                title: "問一個問題",
                 message: '<div class="row">  ' +
                     '<div class="col-md-12"> ' +
                     '<form class="form-horizontal"> ' +
 
                 '<div class="form-group"> ' +
-                    '<label class="col-md-4 control-label" for="name">Question</label> ' +
+                    '<label class="col-md-4 control-label" for="name" style="font-size:30px">問題:</label> ' +
                     '<div class="col-md-4"> ' +
-                    '<input id="name" name="name" type="text" placeholder="What to ask" class="form-control input-md"> ' +
-                    '<span class="help-block">Here goes your question with 2 direction</span> ' +
+                    '<input id="name" name="name" type="text" placeholder="要問什麼呢?" style=" position:relative;  height:40px;width:300px; top:10px;"  class="form-control input-md"> ' +
+                    '<span class="help-block" style=" position:relative;  top:10px; width:200px; ">(一個可歸類成2大方向的問題)</span> ' +
                     '</div> ' +
                     '</div> ' +
+
+                // '<div class="form-group"> ' +
+                //     '<label class="col-md-4 control-label" for="awesomeness">2 Direction</label> ' +
+                //     '<div class="col-md-4"> <div class="radio">' +
+                //     '<input id="Direction1" name="Direction" type="text" placeholder="First" class="form-control input-md"> ' +
+                //     '<input id="Direction2" name="Direction" type="text" placeholder="Second" class="form-control input-md"> ' +
+
+                // '</div> ' +
+                //     '</div> ' +
+                //     '</div>' +
+
+
+
+
+
+
+
+
 
                 '<div class="form-group"> ' +
-                    '<label class="col-md-4 control-label" for="awesomeness">2 Direction</label> ' +
-                    '<div class="col-md-4"> <div class="radio">' +
-                    '<input id="Direction1" name="Direction" type="text" placeholder="First" class="form-control input-md"> ' +
-                    '<input id="Direction2" name="Direction" type="text" placeholder="Second" class="form-control input-md"> ' +
-
-                '</div> ' +
-                    '</div> ' +
-                    '</div>' +
-
-                '<div class="form-group"> ' +
-                    '<label class="col-md-4 control-label" for="name">Story about this question.</label> ' +
+                    '<label class="col-md-4 control-label" for="name">可填問題相關的資訊</label> ' +
                     '<div class="col-md-4"> ' +
-                    '<textarea id="story" name="story" type="text" placeholder="More information"  rows="10" cols="30"/> ' +
+                    '<textarea id="story" name="story" type="text" placeholder="相關的事件or資料..."  rows="10" cols="30"/> ' +
                 // '<span class="help-block">Here goes your name</span> </div> ' +
                 '</div> ' +
+                    '</div> ' +
+
+
+
+                '<div class="form-group"> ' +
+                    '<label class="col-md-4 control-label" for="awesomeness">或上傳張圖片:</label> ' +
+
+                '<form action="upload.php" method="POST" name="FileForm" enctype="multipart/form-data">' +
+                    '<div class="col-md-4"> <div class="radio">' +
+                    '<input type="file" name="file1" size="20" id="file1" />' +
+                    '</br>' +
+                    '<input type="button" class="btn-warning" value="確定上傳"  /></div>' +
+                    '</div> ' +
+                    '</div> ' +
+
+
 
 
 
                 '</form> </div>  </div>',
                 buttons: {
                     success: {
-                        label: "Ask",
+                        label: "預覽",
                         className: "btn-success",
                         callback: function() {
                             var name = $('#name').val();
@@ -116,60 +146,80 @@ var dialog0;
                             //     'href': 'http://www.google.com'
                             // }).text("Google");
 
-                            var card = '<div class="row"   style="width: 714px; height:424px; background: url(img/card.png) repeat center; background-size:100%;">  ' +
+                            var card = '<div class="row">' +
+                                '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +
                                 '<div class="col-md-12"> ' +
                                 '<form class="form-horizontal"> ' +
                                 '</br>' +
                                 '</br>' +
-                                '</br>' +
-                                '</br>' +
-                                '</br>' +
-                                '</br>' +
-
-                                '<div class="form-group"> ' +
-                                '<label class="col-md-4 control-label" for="name">' + userN + '</label> ' +
-                                '</div> ' +
-
 
 
                                 '<div class="form-group"> ' +
-                                '<label class="col-md-4 control-label" for="name">Question:</label> ' +
-                                '<div class="col-md-4"> ' +
 
-                                '<span class="help-block">' + name + '</span> ' +
-                                '</div> ' +
-                                '</div> ' +
+                                '<label class="col-md-4 control-label help-block" for="name">' +
+                                '<img height="64px" width="64px" src=' + friendsData.url + ' style="border-radius:40%; border-color:#ffffff; right:"5px">' +
+                                userN2 + ' : ' + '</label> ' +
+                                '<br>' +
+                                '<label class="control-label" style="font-size:30px rows:3">' + name + '</label> ' +
+
+                                '<div style="align: center;">' +
+                                '</br>' +
+                                '</br>' +
+                                '</br>' +
+                                '</br>' +
+                                '<div class="dd">' +
+                                '</t>' +
+                                '</t>' +
+                                '<div class="blue" style="width:50%;   left:300px;position:relative;"></div>' +
+                                '<div class="red" style="width:50%;"></div>' +
+
+                                '<textarea style="left:0px;position:relative;"class="in1" type="text" rows="3" />' +
+                                '</t>' +
+                                '</t>' + '</t>' +
+
+                                '<textarea style="align:right;left:300px;position:relative;" class="in2" type="text" rows="3" />' +
+                                '</div>' +
+                                '</div>' +
 
                                 // '<div class="form-group"> ' +
-                                //     '<label class="col-md-4 control-label" for="awesomeness">2 Direction</label> ' +
-                                //     '<div class="col-md-4"> <div class="radio">' +
-                                //     '<input id="Direction1" name="Direction" type="text" placeholder="First" class="form-control input-md"> ' +
-                                //     '<input id="Direction2" name="Direction" type="text" placeholder="Second" class="form-control input-md"> ' +
+                                // '<label class="col-md-4 control-label" for="name">Question:</label> ' +
+                                // '<div class="col-md-4"> ' +
 
+                                // '<span class="help-block">' + name + '</span> ' +
                                 // '</div> ' +
-                                //     '</div> ' +
-                                //     '</div>' +
-
-                                // '<div class="form-group"> ' +
-                                //     '<label class="col-md-4 control-label" for="name">Story about this question.</label> ' +
-                                //     '<div class="col-md-4"> ' +
-
-                                //     '<textarea id="story" name="story" type="text" placeholder="More information"  rows="10" cols="30" value="dir1"/> ' +
-                                // // '<span class="help-block">Here goes your name</span> </div> ' +
                                 // '</div> ' +
 
 
-
-                                '</form> </div>  </div>';
-
-                            $("aa").append(card);
-
-                            // card.append(b);
+                                // elem.setAttribute("id", "account");
 
 
 
+                                '</form> </div></div>  </div>';
+                            bootbox.dialog({
+                                title: "預覽問題",
+
+                                message: card,
+                                buttons: {
+                                    success: {
+                                        label: "發問",
+                                        className: "btn-success",
+                                        callback: function() {
+                                            $("aa").append(card);
 
 
+
+
+                                        }
+                                    }
+                                }
+
+
+                                // card.append(b);
+
+
+
+
+                            });
 
 
 
@@ -316,91 +366,161 @@ var dialog0;
     function fbLogin() {
         FB.login(function(response) {
             if (response.session) {
-                 alert("logged");
+                alert("logged");
                 //user is logged in, reload page
                 // window.location.reload(true);
                 loginStatus();
                 dialog0.close();
             } else {
                 // user is not logged in
-                 // alert("not");
-                 loginStatus();
-                 dialog0.close();
+                // alert("not");
+                loginStatus();
+                dialog0.close();
             }
         }, {
             scope: 'publish_actions,user_friends'
         });
     }
-
-    function loginStatus() {
-        FB.getLoginStatus(function(res) {
-            if (res.status == "connected") {
-
-                FB.api('/me', function(fbUser) {
-                        console.log("Open the pod bay doors, " + fbUser.name + ".");
-                        userN = fbUser.name;
-                         userN2 = fbUser.first_name;
-                         document.getElementById('account_name').innerText=userN2;
-                    }
+    t.onmouseover = function() {
+        // alert("00");
 
 
-                );
-                FB.api('/me/picture', function(response) {
-                    // var url = $.parseJSON(fbUser).url;
-                    // var data = JSON.parse(response);
+        var pinball = '<div  class="drop-shadow curved curved-vt-2"  id="tt"    style="position:absolute; width:500px; height:300px; z-index: 4; background-color:red"></div>';
+        $(t0).append(pinball);
+        var url = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949"
+        var tt = document.getElementById("tt");
+        // tt.style.zIndex="4"
+        var elem = document.createElement("img");
+        elem.setAttribute('style', 'border-radius:100%; border-color:#ffffff; cursor: url("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949");  ');
+        elem.setAttribute("height", "64");
+        elem.setAttribute("width", "64");
+        elem.setAttribute("alt", "Flower");
+        elem.setAttribute("id", "accoun");
+        elem.setAttribute("draggable", "flase");
 
-                    var friendsData = response.data;
-                    // console.log(friendsData);
-
-                    console.log(friendsData.url);
-                    userData.removeChild(loginB)
-                    // loginB.innerText = "";
-
-
-                    var elem = document.createElement("img");
-                    elem.setAttribute('style', 'border-radius:40%; border-color:#ffffff; cursor: pointer; ');
-                    elem.setAttribute("height", "64");
-                    elem.setAttribute("width", "64");
-                    elem.setAttribute("alt", "Flower");
-                    elem.setAttribute("id", "account");
-
-
-
-                    elem.onmouseover = function() {
-                        elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; border-width:40px;  border: solid #fff; border-style:outset;');
-                    }
-                    elem.onmouseout = function() {
-                        var panel = document.getElementById('sections_panel'),
-                            maxH = "200px";
-                        if (panel.style.height != maxH) {
-                            elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:0px;  ');
-                            // alert("0...0");
-                        } else {
-                            elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
-
-                        }
-                    }
-                    elem.onclick = function() {
-                        elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
-                        // alert("0.0");
-                        // openclose();
+        elem.src = url;
+        tt.appendChild(elem);
+        tt.onmouseout = function() {
+            // alert("00");
+            $(tt).remove();
+            // tt.style.zIndex="1"
+        }
+        $(accoun).mousedown(function() {
+                // alert("0000");
+                // var flag = false;
+                var flag = true;
+                // alert("2");
+                // var stop;
+                // stop = setTimeout(function() {//down 1s，才运行。
+                //     flag = true;
+                //     elem.setAttribute('style', 'border-radius:100%; border-color:#ffffff; cursor: url("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949"); ');
+                //     // alert("开始处理你的代码.");
+                // }, 1000);
+                //                 $(accoun).mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
+                //                     if (!flag) {
+                //                         // clearTimeout(stop);
+                //                     }
+                //                 });
+                $(accoun).mouseup(function() {
+                        flag = false;
+                         // alert("1");
+                    });
 
 
-                        // alert("...");
-                    }
-                    elem.src = friendsData.url;
-                    userData.appendChild(elem);
-                    // userData.insertBefore(elem, document.getElementById('arrow'));
+
+ $(accoun).mousemove(function(e) {
+    if(flag)
+        console.log(e.pageX+","+e.pageY);
+                    // alert("0.0");
                 });
-                logined = true;
-            } else {
-                console.log("NO DOOR");
+
+                });
+                /*$(accoun).mousedown(function() {
+                // alert("0000");
+                var flag = false;
+                var stop;
+                stop = setTimeout(function() {//down 1s，才运行。
+                    flag = true;
+                    alert("开始处理你的代码.");
+                }, 1000);
+                $(accoun).mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
+                    if (!flag) {
+                        clearTimeout(stop);
+                    }
+                });
+            });*/
+
             }
-        });
-    }
+
+            function loginStatus() {
+                FB.getLoginStatus(function(res) {
+                    if (res.status == "connected") {
+
+                        FB.api('/me', function(fbUser) {
+                                console.log("Open the pod bay doors, " + fbUser.name + ".");
+                                userN = fbUser.name;
+                                userN2 = fbUser.first_name;
+                                document.getElementById('account_name').innerText = userN2;
+                            }
 
 
-    /* myMenu.onclick = function() {
+                        );
+                        FB.api('/me/picture', function(response) {
+                            // var url = $.parseJSON(fbUser).url;
+                            // var data = JSON.parse(response);
+
+                            friendsData = response.data;
+                            // console.log(friendsData);
+
+                            console.log(friendsData.url);
+                            userData.removeChild(loginB)
+                            // loginB.innerText = "";
+
+
+                            var elem = document.createElement("img");
+                            elem.setAttribute('style', 'border-radius:40%; border-color:#ffffff; cursor: pointer; ');
+                            elem.setAttribute("height", "64");
+                            elem.setAttribute("width", "64");
+                            elem.setAttribute("alt", "Flower");
+                            elem.setAttribute("id", "account");
+
+
+
+                            elem.onmouseover = function() {
+                                elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; border-width:40px;  border: solid #fff; border-style:outset;');
+                            }
+                            elem.onmouseout = function() {
+                                var panel = document.getElementById('sections_panel'),
+                                    maxH = "200px";
+                                if (panel.style.height != maxH) {
+                                    elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:0px;  ');
+                                    // alert("0...0");
+                                } else {
+                                    elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
+
+                                }
+                            }
+                            elem.onclick = function() {
+                                elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
+                                // alert("0.0");
+                                // openclose();
+
+
+                                // alert("...");
+                            }
+                            elem.src = friendsData.url;
+                            userData.appendChild(elem);
+                            // userData.insertBefore(elem, document.getElementById('arrow'));
+                        });
+                        logined = true;
+                    } else {
+                        console.log("NO DOOR");
+                    }
+                });
+            }
+
+
+            /* myMenu.onclick = function() {
         // show_hide('myMenu');
         // alert("....");
         if (myMenu_con.style.display == '') {
@@ -416,32 +536,37 @@ var dialog0;
 
 
     }*/
-    function openclose() {
-        var panel = document.getElementById('sections_panel'),
-            tri = document.getElementById("arrow-up"),
-            maxH = "200px";
-        if (panel.style.height == maxH) {
-            panel.style.height = "0px";
-            // navarrow.innerHTML = "&#9662;";
-            // userData.appendChild(elem);
+            function checkFile() {
+                alert("..");
+            }
 
-        } else {
-            panel.style.height = maxH;
-//             tri.setAttribute('style', ' position: absolute;left: 10px;width: 0; height: 0;  border-left: 15px solid transparent;border-right: 15px solid transparent;border-bottom: 15px solid black;
-// overflow: hidden;
-//     transition: height 0.3s linear 0s;');
-            //          tri.style.border-left= 15px solid transparent;
-            //  tri.style.border-right: 15px solid transparent;
+            function openclose() {
+                var panel = document.getElementById('sections_panel'),
+                    tri = document.getElementById("arrow-up"),
+                    maxH = "200px";
+                if (panel.style.height == maxH) {
+                    panel.style.height = "0px";
+                    // navarrow.innerHTML = "&#9662;";
+                    // userData.appendChild(elem);
 
-            // tri.style. border-bottom: 15px solid black;
-            //           var elem = document.createElement("div");
-            //       elem.setAttribute("class","arrow-up");
-            //       elem.setAttribute("id","tri");
-            // userData.appendChild(elem);
-            // navarrow.innerHTML = "&#9652;";
-        }
-    }
-    /*test.onclick = function() {
+                } else {
+                    panel.style.height = maxH;
+                    //             tri.setAttribute('style', ' position: absolute;left: 10px;width: 0; height: 0;  border-left: 15px solid transparent;border-right: 15px solid transparent;border-bottom: 15px solid black;
+                    // overflow: hidden;
+                    //     transition: height 0.3s linear 0s;');
+                    //          tri.style.border-left= 15px solid transparent;
+                    //  tri.style.border-right: 15px solid transparent;
+
+                    // tri.style. border-bottom: 15px solid black;
+                    //           var elem = document.createElement("div");
+                    //       elem.setAttribute("class","arrow-up");
+                    //       elem.setAttribute("id","tri");
+                    // userData.appendChild(elem);
+                    // navarrow.innerHTML = "&#9652;";
+                }
+            }
+
+            /*test.onclick = function() {
         alert("0.0");
         var panel = document.getElementById('sections_panel'),
             // navarrow = document.getElementById("navarrow"),
@@ -459,23 +584,34 @@ var dialog0;
 
     }*/
 
-    // function show_hide(id) {
-    //   alert("...");
-    //       ID = document.getElementById(id);
-    //       if (ID.style.display == 'block') {
-    //           ID.style.display = 'none';
-    //       } else {
-    //           ID.style.display = '';
-    //           $('#' + id).focus();
-    //       }
-    //   }
-}
-// function addComment(name,comment){
-//   alert("...");
-//           var newElement = document.createElement("div");
-//           var newText = document.createTextNode("userName:"+name+"  "+comment);
-//           // i1.setAttribute("innerText","name:"+inn0.value); 
-//           newElement.appendChild(newText);
-//           re1.appendChild(newElement); 
+            // function show_hide(id) {
+            //   alert("...");
+            //       ID = document.getElementById(id);
+            //       if (ID.style.display == 'block') {
+            //           ID.style.display = 'none';
+            //       } else {
+            //           ID.style.display = '';
+            //           $('#' + id).focus();
+            //       }
+            //   }
+            // var start_to_say_hi = setInterval("console.log('h1')",100); 
+            // function show_hide(id) {
+            //   alert("...");
+            //       ID = document.getElementById(id);
+            //       if (ID.style.display == 'block') {
+            //           ID.style.display = 'none';
+            //       } else {
+            //           ID.style.display = '';
+            //           $('#' + id).focus();
+            //       }
+            //   }
+        }
+        // function addComment(name,comment){
+        //   alert("...");
+        //           var newElement = document.createElement("div");
+        //           var newText = document.createTextNode("userName:"+name+"  "+comment);
+        //           // i1.setAttribute("innerText","name:"+inn0.value); 
+        //           newElement.appendChild(newText);
+        //           re1.appendChild(newElement); 
 
-// }
+        // }
