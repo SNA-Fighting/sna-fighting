@@ -1,7 +1,9 @@
+body{
+	background:rgba(255,255,0,0.5);
+}
 #top{
 	position: relative;
 	height:500px;
-	background:rgba(255,255,0,0.5);
 }
 .head{
 	position: relative;
@@ -10,6 +12,15 @@
 	height:20%;
 	width:100%;
 	font-size:30px;
+}
+.dhead{
+	font-size:20px;
+}
+#sharebtn{
+	position: relative;
+	left:40%;
+	background:rgba(0,0,255,0.6);
+	box-shadow:2px 2px 5px rgba(0,0,255,0.3),2px -2px 5px rgba(0,0,255,0.3),-2px -2px 5px rgba(0,0,255,0.3),-2px 2px 5px rgba(0,0,255,0.3);
 }
 #dtitle{
 	position: relative;
@@ -31,37 +42,33 @@
 }
 #vote{
 	position: relative;
-	height:100%;
 	width:100%;
 }
 #content{
 	position: relative;
-	height:100%;
 	width:100%;
 	display:table;
-	background:rgba(255,255,0,0.5);
 }
 .con{
 	position: relative;
-	height:100%;
 	width:100%;
 	display:table-row;
 }
 #lefth{
-	height:100%;
 	width:50%;
 	display:table-cell;
 }
 #righth{
-	height:100%;
 	width:50%;
 	display:table-cell;
 }
 .left{
 	position: relative;
 	background:rgba(255,0,0,0.5);
+	box-shadow:2px 2px 5px rgba(255,0,0,0.3),2px -2px 5px rgba(255,0,0,0.3),-2px -2px 5px rgba(255,0,0,0.3),-2px 2px 5px rgba(255,0,0,0.3);
 }
 .right{
 	position: relative;
 	background:rgba(0,0,255,0.5);
+	box-shadow:2px 2px 5px rgba(0,0,255,0.3),2px -2px 5px rgba(0,0,255,0.3),-2px -2px 5px rgba(0,0,255,0.3),-2px 2px 5px rgba(0,0,255,0.3);
 }
