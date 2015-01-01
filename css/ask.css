@@ -1,17 +1,25 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
 body{
 	background:#141414;
+	perspective: 1px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
 }
 #top{
 	position: relative;
 	height:100%;
 	width:100%;
-	background:rgba(255,255,255,0.95);
+	background:rgba(255,255,255,0.85);
+	z-index:2;
 }
 .head{
 	position: relative;
 	left:5%;
-	margin-top:5%;
-	height:20%;
+	height:40%;
 	width:100%;
 	font-size:30px;
 	font-family:微軟正黑體;
@@ -58,19 +66,15 @@ body{
 	position: relative;
 	font-size:20px;
 	font-family:微軟正黑體;
-	margin-top:10%;
 	left:20%;
-	height:100%;
+	height:60%;
 	width:70%;
-	display:inline-block;
 }
 #vote{
 	position: relative;
 	text-align:center;
 	width:100%;
-	height:100%;
-	display:inline-block;
-	padding-top:10%;
+	height:60%;
 	margin: auto;
 	font-family:微軟正黑體;
 }
@@ -79,13 +83,14 @@ body{
 	width:100%;
 	margin:auto;
 	height:100%;
-	margin-top:3%;
-	background:rgba(255,255,255,0.95);
+	background:rgba(255,255,255,0.85);
 }
 .con{
 	position: relative;
 	width:100%;
-	height:100%;
+	height:50%;
+	transform: translateZ(-1px) scale(2);
+	z-index:2;
 }
 #lefth{
 	position:relative;
