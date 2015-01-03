@@ -32,15 +32,6 @@ body{
 	position: relative;
 	left:300px;
 	background:rgba(0,0,255,0.6);
-	-webkit-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,1),
-            0 0 16px rgba(0,0,0,1); 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,1),
-            0 0 16px rgba(0,0,0,1); 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,1),
-            0 0 16px rgba(0,0,0,1); 
 }
 #sharebtn:hover{
 	background:rgba(0,0,255,0.3);
@@ -89,8 +80,8 @@ body{
 .con{
 	position: relative;
 	width:100%;
-	transform: translateZ(-1px) scale(2);
-	background:rgba(255,255,255,0.65);
+	transform: translateZ(-1px) scale(1.75);
+	background:rgba(255,255,255,0.45);
 	z-index:2;
 	float:left;
 }
@@ -111,7 +102,7 @@ body{
 }
 .left{
 	position: relative;
-	background:rgba(255,0,0,0.7);
+	background:rgba(255,0,0,0.5);
 	box-shadow:2px 2px 5px rgba(255,0,0,0.3),2px -2px 5px rgba(255,0,0,0.3),-2px -2px 5px rgba(255,0,0,0.3),-2px 2px 5px rgba(255,0,0,0.3);
 }
 .left:hover{
@@ -119,7 +110,7 @@ body{
 }
 .right{
 	position: relative;
-	background:rgba(0,0,255,0.7);
+	background:rgba(0,0,255,0.5);
 	box-shadow:2px 2px 5px rgba(0,0,255,0.3),2px -2px 5px rgba(0,0,255,0.3),-2px -2px 5px rgba(0,0,255,0.3),-2px 2px 5px rgba(0,0,255,0.3);
 }
 .right:hover{
@@ -129,6 +120,7 @@ body{
 	position:relative;
 	border: 5px solid red; 
     border-radius: 99em;
+	left:-20%;
     width:100px;
     height:100px;
 	background:rgba(255,0,0,0.5);
@@ -145,6 +137,7 @@ body{
     margin: 0 0 10px 0;
     text-align: center;
 	display:inline-block;
+	z-index:2px;
 }
 .red:hover{
 	background:rgba(255,0,0,0.3);
@@ -162,6 +155,7 @@ body{
 	position: relative;
 	border: 5px solid blue; 
     border-radius: 99em;
+	left:20%;
     width:100px;
     height:100px;
     -webkit-box-shadow: 
@@ -178,6 +172,7 @@ body{
     margin: 0 0 10px 0;
     text-align: center;
 	display:inline-block;
+	z-index:2px;
 }
 .blue:hover{
 	background:rgba(0,0,255,0.3);
@@ -191,11 +186,12 @@ body{
       inset 0 0 10px  rgba(0,0,0,0.7),
             0 0 20px rgba(0,0,0,0.7); 
 }
-.votebar{
+#votebar{
 	position: relative;
-	width:70%;
+	width:50%;
+	margin:auto;
+	top:10%;
 	height:40px;
 	background:rgba(255,0,0,0.5);
 	border:3px solid rgba(0,0,0,0.5);
-	display:inline-block;
 }
