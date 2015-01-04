@@ -23,12 +23,12 @@ class DB{
 	var $database=null;
 	function __construct(){
 		$dbhost="mysql.lionfree.net";
-		$account="u497706260_test";
+		$account="u497706260_v0";
 		$password="qwe123";
 		$this->database=mysql_connect($dbhost, $account,$password);
 		if($this->database){
 			// echo "DB connected";
-			$result=mysql_select_db("u497706260_test",$this->database);
+			$result=mysql_select_db("u497706260_v0",$this->database);
 			// if($result){
 			// 	echo "DB selected";
 			// }
