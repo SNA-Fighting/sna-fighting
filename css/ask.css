@@ -19,6 +19,7 @@ body{
 .head{
 	position: relative;
 	left:5%;
+	top:15%;
 	height:20%;
 	width:100%;
 	font-size:30px;
@@ -43,15 +44,6 @@ body{
 }
 #sharebtn:hover{
 	background:rgba(0,0,255,0.36);
-	-webkit-box-shadow: 
-      inset 0 0 10px  rgba(0,0,0,0.5),
-            0 0 20px  rgba(0,0,0,0.5); 
-    -moz-box-shadow: 
-      inset 0 0 10px  rgba(0,0,0,0.5),
-            0 0 20px rgba(0,0,0,0.5); 
-    box-shadow: 
-      inset 0 0 10px  rgba(0,0,0,0.5),
-            0 0 20px rgba(0,0,0,0.5); 
 }	
 #dtitle{
 	position: relative;
@@ -73,10 +65,12 @@ body{
 	left:20%;
 	height:80%;
 	width:70%;
+	top:20%;
 }
 #vote{
 	position: relative;
 	text-align:center;
+	top:15%;
 	width:100%;
 	height:50%;
 	margin: auto;
@@ -206,7 +200,7 @@ body{
 	top:40%;
 	height:40px;
 	border:3px solid rgba(0,0,0,0.5);
-	opacity: 0.75;
+	opacity: 0.8;
 }
 #lbar{
 	-ms-transform: rotate(180deg); /* IE 9 */
