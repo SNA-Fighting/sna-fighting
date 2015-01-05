@@ -48,13 +48,13 @@ body{
 #dtitle{
 	position: relative;
 	font-size:30px;
-	left:-15%;
+	left:15%;
+	top:-15%;
 }
 #dcontent{
 	position: relative;
-	width:75%;
-	top:30px;
-	left:80px;
+	width:65%;
+	left:20%;
 	height:auto;
 	border:3px solid rgba(0,0,0,0.8);
 }
@@ -62,10 +62,9 @@ body{
 	position: relative;
 	font-size:20px;
 	font-family:微軟正黑體;
-	left:20%;
-	height:80%;
-	width:70%;
-	top:20%;
+	background:rgba(255,255,255,0.95);
+	height:auto;
+	width:100%;
 }
 #vote{
 	position: relative;

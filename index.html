@@ -12,235 +12,177 @@
         <!-- Custom CSS -->
         <link href="css/agency.css" rel="stylesheet">
         <link href="css/other.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
         <!-- Custom Fonts -->
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-                <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-                    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
-                    <link href="bootstrap-dialog/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
-                    <script src="js/jquery.js"></script>
-                    <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-                    <script src="js/bootstrap.min.js"></script>
-                    <script src="js/upload.js"></script>
-                    <script src="bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
-                    <script type="text/javascript" charset="UTF-8" src="js/homePage.js"> </script>
-                    <script type="text/javascript" src="js/bootbox.js"></script>
-                    </script>
-                    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-                    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-                    <!--[if lt IE 9]>
-                    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-                    <![endif]-->
-                </head>
-                <body id="page-top" class="index" >
-                    <!-- Navigation -->
-                    <nav class="navbar navbar-default navbar-fixed-top">
-                        <div class="container">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header page-scroll">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand page-scroll" href="#page-top">Fighting!!!</a>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+        <link href="bootstrap-dialog/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery.js"></script>
+        <script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+        <script src="js/bootstrap.min.js"></script>            
+        <script src="bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="js/homePage.js"> </script>
+        <script type="text/javascript" src="js/bootbox.js"></script>
+        </script>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body id="page-top" class="index" >
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">Fighting!!!</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" id="askBtn" href="#">ask</a>             
+                        </li>
+                        <li id='userD'>
+                            <a class="page-scroll" id="loginBtn" href="#">login</a>
+                            <!--<div id="sections_btn_holder">
+                                    <button id='testBtn'>Navigator <span id="navarrow">&#9662;</span></button>
+                                </div> -->
+                            <!-- <div id="sections_panel" class="longen">   -->
+                            <!-- <div id="menu"> -->
+                            <!-- <div id="arrow-up"></div> -->
+                            <div id="sections_panel" >
+                            <div>Hi,
+								<p id='account_name'></p>
+                                <button type="button" class="btn-info" width="48px" height="48px" >已發過問題</button>
+                                <button type="button" class="btn-warning" >登出</button>
                             </div>
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="hidden">
-                                        <a href="#page-top"></a>
-                                    </li>
-                                    <li>
-                                        <a class="page-scroll" id="askBtn" href="#">ask</a>
-                                        
-                                    </li>
-                                    <li id='userD'>
-                                        <a class="page-scroll" id="loginBtn" href="#">login</a>
-                                        <!--                                      <div id="sections_btn_holder">
-                                            <button id='testBtn'>Navigator <span id="navarrow">&#9662;</span></button>
-                                        </div> -->
-                                        <!-- <div id="sections_panel" class="longen">   -->
-                                        <!-- <div id="menu"> -->
-                                        <!-- <div id="arrow-up"></div> -->
-                                        <div id="sections_panel" >
-                                            <div>Hi,
-                                                <p id='account_name'></p>
-                                                <button type="button" class="btn-info" width="48px" height="48px" >已發過問題</button>
-                                                <button type="button" class="btn-warning" >登出</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                              
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        <!-- /.navbar-collapse -->
+                            </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+
                     </div>
                     <!-- /.container-fluid -->
-                </nav>
-                <!-- Header -->
-                <header>
-                    <div class="container">
-                        <div class="intro-text">
-                            <div class="intro-lead-in">Welcome To Fighting!</div>
-                            <a href="#services" class="page-scroll btn btn-xl">See More</a>
-                        </div>
+        </nav>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in">Welcome To Fighting!</div>
+                        <a href="#services" class="page-scroll btn btn-xl">See More</a>
                     </div>
-                </header>
-                <!-- Portfolio Grid Section -->
-                <section id="portfolio" class="bg-light-gray">
-                    <div class="container">
-                        <aa>
-                            <!--  <div>
-                                <section class="jtr">
-                                    <span class="lgin" style="display:block;" >
-                                    <span class="cp" id="myMenu">
-                                    <b>Click Here</b> <span class="opt"></span></span>
-                                    <section id="acc_opt" style="display:none;">
-                                        <a>Karthick Muthu</a>
-                                        <a>My Friends Ratings</a>
-                                        <a>Tag Your Friends</a>
-                                        <a>Create page</a>
-                                        <a>Edit Profile</a>
-                                        <a>Change Password</a>
-                                        <a>Logout</a>
-                                    </section></section>
-                                </div> -->
-                            </aa>
-                            <!--   <div class="dd">
-                                <div class="blue" style="width:70%;"></div>
-                                <div class="red" style="width:30%;"></div>
-                            </div> -->
-                            <!--   <div >
-                                <input class="in" type="text" />
-                            </div> -->
-                            <div id="card">
-                                
-                            </div>
-                            <div class="row" id="t0">
-                               
-                                <t  class="drop-shadow curved curved-vt-2" id="t"   style="position:absolute;width:500px; height:300px; z-index: 3;">
-                                    <div class="col-md-12">
-                                        <form class="form-horizontal">
-                                            </br>
-                                            </br>
-                                            
-                                            <div class="form-group">
-                                                <label class="col-md-4 control-label help-block" for="name">
-                                                    <img height="64px" width="64px" src='friendsData.url' style="border-radius:40%; border-color:#ffffff; right:"5px""/>
-                                                    userN2 :
-                                                </label>
-                                                </br>
-                                                <label class="control-label" style="font-size:30px rows:3">11111111111?</label>
-                                                
-                                                <div style="align: center;">
-                                                    </br>
-                                                    </br>
-                                                    </br>
-                                                    </br>
-                                                    <div class="dd">
-                                                        </t>
-                                                        </t>
-                                                        <div class="blue" style="width:50%;   left:300px;position:relative;"></div>
-                                                        <div class="red" style="width:50%;"></div>
-                                                        <textarea style="left:0px;position:relative;"class="in1" type="text" rows="3" >
-                                                        </textarea>
-                                                        </t>
-                                                        </t>
-                                                        </t>
-                                                        
-                                                        <textarea style="align:right;left:300px;position:relative;" class="in2" type="text" rows="3" ></textarea>
-                                                    </div>
-                                                </div>
-                                                
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--              <div class="drop-shadow lifted rotated" style="height:300px ;width:500px;">
-                                    <p>Rotated box</p>
-                                </div> -->
-                                <!--      <div>
-                                    
-                                    <form align='center' style="background-color:yellow">
-                                        <p name='question'>題目:狗比貓可愛?</p>
-                                        </hr>
-                                        <p name='story'>blablalblalblalbla.........................</br>lablalblalblalbl
-                                        </br>lablalblalblalbla
-                                        </p>
-                                        
-                                    </form>-->
-                                    <!-- <div id="result"></div>-->
-                                    <!--   <div id=re1 style="background-color:#DDEDFB">
-                                        
-                                    </div>-->
-                                    <!--<form align='center' action='fightCard.php' method='POST'>-->
-                                    <form align='center' id='form0' style="display:none">
-                                        <input type='text' id='in0' >
-                                        <input type='text' id='in1'>
-                                        <input type='button' value="回應" id='reBtn'>
-                                    </form>
-                                    <!-- <div class="portfolio-caption">
-                                        <h4>Round Icons</h4>
-                                        <p class="text-muted">Graphic Design</p>
-                                    </div>
-                                    
-                                    <div class="col-md-11 col-sm-8 portfolio-item">
-                                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                                            <div class="portfolio-hover">
-                                                <div class="portfolio-hover-content">
-                                                    <i class="fa fa-plus fa-3x"></i>
-                                                </div>
-                                            </div>
-                                            <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                                        </a>
-                                        <div class="portfolio-caption">
-                                            <h4>試試中文</h4>
-                                            <p class="text-muted">試試中文</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-11 col-sm-8 portfolio-item">
-                                        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                                            <div class="portfolio-hover">
-                                                <div class="portfolio-hover-content">
-                                                    <i class="fa fa-plus fa-3x"></i>
-                                                </div>
-                                            </div>
-                                            <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                                        </a>
-                                        <div class="portfolio-caption">
-                                            <h4>Treehouse</h4>
-                                            <p class="text-muted">Website Design</p>
-                                        </div>
-                                    </div> -->
-                                    
-                                </div>
-                            </section>
-<!--   上傳圖片預覽:<br>
-    <div style="width:90px; height:110px; overflow:hidden; border:1px solid red;">
-    <div id="imgDiv"> </div>
-    </div>
-    <br> 
-    <input type="file" value="上傳文件">-->
-                            <!-- jQuery -->
-                            <script src="js/jquery.js"></script>
-                            <script src="js/upload.js"></script>
-                            <!-- Bootstrap Core JavaScript -->
-                            <script src="js/bootstrap.min.js"></script>
-                            <!-- Plugin JavaScript -->
-                            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-                            <script src="js/classie.js"></script>
-                            <script src="js/cbpAnimatedHeader.js"></script>
-                            <!-- Contact Form JavaScript -->
-                            <script src="js/jqBootstrapValidation.js"></script>
-                            
-                            <!-- Custom Theme JavaScript -->
-                            <script src="js/agency.js"></script>
-                        </body>
-                    </html>
+                </div>
+			</div>
+        </header>
+        <!-- Portfolio Grid Section -->
+		<div class="content">
+			<div class="center">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="title">
+							<img src="head.jpg"/>userN:qtitle
+						</div>
+						<div class="qcontent">
+							<div class="red"></div>
+							<div class="blue"></div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="title">
+							<img src="head.jpg"/>userN:qtitle
+						</div>
+						<div class="qcontent">
+							<div class="red"></div>
+							<div class="blue"></div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="title">
+							<img src="head.jpg"/>userN:qtitle
+						</div>
+						<div class="qcontent">
+							<div class="red"></div>
+							<div class="blue"></div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="title">
+							<img src="head.jpg"/>userN:qtitle
+						</div>
+						<div class="qcontent">
+							<div class="red"></div>
+							<div class="blue"></div>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+								<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="rightb">
+				<button class="btn btn-primary">依時間</button>
+				<button class="btn btn-primary">依人氣</button>
+				<div class="topf">
+					Top 5:
+				</div>
+				<div class="ff">
+					Friend's Fight!!!:
+				</div>
+			</div>
+		</div>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/cbpAnimatedHeader.js"></script>
+        <!-- Contact Form JavaScript -->
+        <script src="js/jqBootstrapValidation.js"></script>               
+        <!-- Custom Theme JavaScript -->
+        <script src="js/agency.js"></script>
+    </body>
+</html>
