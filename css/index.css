@@ -3,6 +3,10 @@ body{
 	width:100%;
 	height:100%;
 }
+header{
+	z-index:3;
+	position:relative;
+}
 .content{
 	position:relative;
 	width:100%;
@@ -12,16 +16,19 @@ body{
 	position:relative;
 	width:70%;
 	height:auto;
-	left:10%;
+	left:13%;
 	display:inline-block;
 }
 .rightb{
-	position:relative;
-	width:26%;
-	height:800px;
+	position:fixed;
+	width:28%;
+	height:auto;
 	float:right;
-	border-left:solid rgba(0,0,220,0.5);
+	right:0;
+	top:13%;
+	height:500px;
 	display:inline-block;
+	z-index:1;
 }
 .col-md-6{
 	position:relative;
@@ -34,19 +41,22 @@ body{
 	position:relative;
 	width:100%;
 	height:40%;
-	border-bottom:solid rgba(0,0,0,0.5);
+	border-bottom:solid 5px rgba(0,0,0,0.5);
+	border-top:solid 5px rgba(0,0,0,0.5);
+	border-left:solid 5px rgba(0,0,0,0.5);
 }
 .ff{
 	position:relative;
 	width:100%;
 	height:60%;
-	border-bottom:solid rgba(0,0,0,0.5);
+	border-bottom:solid 5px rgba(0,0,0,0.5);
+	border-left:solid 5px rgba(0,0,0,0.5);
 }
 .progress{
 	position: relative;
 	width:50%;
 	margin:auto;
-	top:40%;
+	top:30px;
 	height:25px;
 	border:3px solid rgba(0,0,0,0.5);
 	opacity: 0.8;
@@ -61,6 +71,7 @@ body{
 	position:relative;
 	border: 3px solid red; 
     border-radius: 99em;
+	left:10%;
     width:60px;
     height:60px;
 	background:rgba(255,0,0,0.5);
@@ -129,9 +140,20 @@ body{
 .title{
 	position: relative;
 	top:5%;
+	font-size:20px;
 }
 .qcontent{
 	position: relative;
-	top:20%;
+	top:26%;
 	margin:auto;
+}
+.btn-primary{
+	position: relative;
+	border-radius:10px;
+	width:120px;
+	height:50px;
+	font-size:20px;
+	margin-top:10px;
+	margin-bottom:6px;
+	left:6%;
 }
