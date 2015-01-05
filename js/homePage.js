@@ -45,27 +45,29 @@ window.onload = function() {
             // navarrow.innerHTML = "&#9662;";
         }
     }
-    loginB.onclick = function() {
-        // alert("0.0");
-        BootstrapDialog.show({
-            title: 'Login',
-            message: 'Login to join fighting',
-            cssClass: 'login-dialog',
-            buttons: [{
-                label: 'Login with Facebook',
-                cssClass: 'btn-primary',
-                action: function(dialog) {
-                    fbLogin();
-                    dialog0 = dialog;
-                }
-            }, {
-                label: 'Cancel',
-                cssClass: 'btn-cancel',
-                action: function(dialog) {
-                    dialog.close();
-                }
-            }]
-        });
+    if (loginB) {
+        loginB.onclick = function() {
+            // alert("0.0");
+            BootstrapDialog.show({
+                title: 'Login',
+                message: 'Login to join fighting',
+                cssClass: 'login-dialog',
+                buttons: [{
+                    label: 'Login with Facebook',
+                    cssClass: 'btn-primary',
+                    action: function(dialog) {
+                        fbLogin();
+                        dialog0 = dialog;
+                    }
+                }, {
+                    label: 'Cancel',
+                    cssClass: 'btn-cancel',
+                    action: function(dialog) {
+                        dialog.close();
+                    }
+                }]
+            });
+        }
     }
     askBtn.onclick = function() {
         if (logined) { //testL
@@ -113,7 +115,7 @@ window.onload = function() {
                 ' <script type="text/javascript">' +
                     '$(document).ready(function() {' +
 
-                '  $("input").uploadPreview({ width: 90, height: 110, imgDiv: "#imgDiv"});' +
+                '  $("input#pic").uploadPreview({ width: 90, height: 110, imgDiv: "#imgDiv"});' +
                     '});' +
 
                 '</script>' +
@@ -131,9 +133,11 @@ window.onload = function() {
                         callback: function() {
                             // console.log($("input").files[0]);
                             var name = $('#name').val();
-                           
+
                             var story = $('#story').val();
                             var img = $('#pic');
+                            console.log(img[0].files[0]);
+
                             // fd.append('file', img);
                             // console.log(img);
                             // var answer = $("input[name='awesomeness']:checked").val()
@@ -165,13 +169,13 @@ window.onload = function() {
                                 '<div class="blue" style="width:50%;   left:300px;position:relative;"></div>' +
                                 '<div class="red" style="width:50%;"></div>' +
                                 '<textarea id="Direction1" style="left:0px;position:relative; value="對" class="in1" type="text" rows="3" >' +
-                                 '對'+
-                                '</textarea>'+
+                                '對' +
+                                '</textarea>' +
                                 '</t>' +
                                 '</t>' + '</t>' +
                                 '<textarea id="Direction2" style="align:right;left:300px;position:relative;" value="不對" class="in2" type="text" rows="3" >' +
-                                '不對'+
-                                '</textarea>'+
+                                '不對' +
+                                '</textarea>' +
                                 '</div>' +
                                 '</div>' +
                                 // '<div class="form-group"> ' +
@@ -182,7 +186,7 @@ window.onload = function() {
                                 // '</div> ' +
                                 // elem.setAttribute("id", "account");
                                 '</form> </div></div>  </div>';
-                                 
+
                             bootbox.dialog({
                                 title: "預覽問題",
                                 message: card,
@@ -192,19 +196,78 @@ window.onload = function() {
                                         className: "btn-success",
                                         callback: function() {
                                             var dir1 = $('#Direction1').val();
-                                             var dir2 = $('#Direction2').val();
+                                            var dir2 = $('#Direction2').val();
+                                            // var img = $('#pic').files;
+                                            // console.log(img);
                                             // console.log(userN2+"..."+name+"..."+img+"..."+story+"..."+dir1+"..."+dir2);
-                                              saveQ(name,story,"000",dir1,dir2,fbId);
-                                            // $.ajax({
-                                            //     url: 'question.php',
-                                            //     data: fd,
-                                            //     processData: false,
-                                            //     contentType: false,
-                                            //     type: 'POST',
-                                            //     success: function(data) {
-                                            //         alert("ajax end");
-                                            //     }
-                                            // });
+                                            // saveQ(name,story,"0000",dir1,dir2,fbId);
+                                            // alert(new FormData(img[0].files[0]));
+                                            // save2(img[0].files[0]);
+                                            // save2(new FormData(img[0].files[0]));
+                                            //testl
+var da;
+
+    da = new FormData();
+    da.append('file', img[0].files[0]);
+    // da.append('file', img.val());
+console.log(img[0].files[0]);
+  
+  $.ajax({
+        url: 'uploadpic.php',
+  data: da,
+   // dataType: 'json',
+  processData: false,
+  contentType: false ,
+  type: 'POST',
+  success: function(data){
+    // alert(data);
+    saveQ(name,story,data,dir1,dir2,fbId);
+    // console.log(data);
+  }
+});
+    //     data: data,
+    //     processData: false,
+    //      contentType: false,
+    //     type: 'POST',
+
+    //     // This will override the content type header, 
+    //     // regardless of whether content is actually sent.
+    //     // Defaults to 'application/x-www-form-urlencoded'
+    //     contentType: 'multipart/form-data', 
+
+    //     //Before 1.5.1 you had to do this:
+    //     // beforeSend: function (x) {
+    //     //     if (x && x.overrideMimeType) {
+    //     //         x.overrideMimeType("multipart/form-data");
+    //     //     }
+    //     // },
+    //     // Now you should be able to do this:
+    //     mimeType: 'multipart/form-data',    //Property added in 1.5.1
+
+    //     success: function (data) {
+    //         alert(data);
+    //     }
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            //
+                                            // save(name,story,img[0].files[0],dir1,dir2,fbId);
+                                            // alert(img[0]);
+
+                                            // saveQ(name,story,img[0].files[0],dir1,dir2,fbId);
+
                                             $("aa").append(card);
                                         }
                                     }
@@ -328,12 +391,14 @@ window.onload = function() {
         });
     }
 
-    function saveQ(questiontitle, questioncontent, questionimg, questionleft, questionright,fb) {
+    function saveQ(questiontitle, questioncontent, questionimg, questionleft, questionright, fb) {
         // alert(name+" "+bighead);
+        // save(questionimg);
         var formData = {
             question_title: questiontitle,
             question_content: questioncontent,
-            question_img: questionimg,
+             question_img: questionimg,
+            // question_img: "questionimg",
             question_left: questionleft,
             question_right: questionright,
             fb_id: fb
@@ -343,16 +408,82 @@ window.onload = function() {
             type: "POST",
             url: 'question.php',
             // 　contentType: "application/json",
-
+            // contentType: false, 
+            //    processData: false, 
+            //    dataType: 'json',
             data: formData,
             // dataType: 'json',
             // data: {functionname: 'test',arguments:['f','ox']},
             success: function(data0) {
                 alert("問題儲存成功");
+            },
+              error: function(){
+                alert("問題儲存失敗");
+        }
+        });
+
+        // var formData2 = {
+
+        //            question_img: questionimg.files[0],
+
+        //        };
+        //  jQuery.ajax({
+        //            type: "FILE",
+        //            url: 'question.php',
+        // contentType: false, 
+        //    processData: false, 
+        //            data: formData2,
+
+        //            success: function(data0) {
+        //                alert("問題儲存成功2");
+        //            }
+        //        });
+
+
+
+
+    }
+
+    function save(questiontitle, questioncontent, questionimg, questionleft, questionright, fb) {
+        // alert(name+" "+bighead);
+
+        var formData = {
+            question_title: questiontitle,
+            question_content: questioncontent,
+            question_img: questionimg,
+            question_left: questionleft,
+            question_right: questionright,
+            fb_id: fb
+        };
+        $.ajax({
+            url: 'uploadpic.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(data) {
+                alert("ajax end");
             }
         });
     }
+ function save2(questionimg) {
+        // alert(name+" "+bighead);
+         alert(questionimg);
+        // var formData = {
+        //     question_img: questionimg
 
+        // };
+        $.ajax({
+            url: 'uploadpic.php',
+            data: questionimg,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(data) {
+                alert(data);
+            }
+        });
+    }
     function addComment(name, comment) {
         // alert("...");
         var newElement = document.createElement("div");

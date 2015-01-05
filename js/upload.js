@@ -47,17 +47,18 @@
                         var img = $("<img />");
                         imgDiv.replaceWith(img);
                         imgDiv = img;
+                        
                     },
           
                     _this.change(function() {
                      
                         if (this.value) {
-                            // if (!RegExp("\.(" + opts.imgType.join("|") + ")$", "i").test(this.value.toLowerCase())) {
-                            //     alert("圖片類型必須是" + opts.imgType.join("，") + "中的一種");
-                            //     this.value = "";
-                            //     return false;
-                            // }
-                            // imgDiv.hide();
+                            if (!RegExp("\.(" + opts.imgType.join("|") + ")$", "i").test(this.value.toLowerCase())) {
+                                alert("圖片類型必須是" + opts.imgType.join("，") + "中的一種");
+                                this.value = "";
+                                return false;
+                            }
+                            imgDiv.hide();
                             if ($.support.msie && version < 10) {
                              
                                 if (version == 6) {
@@ -75,7 +76,8 @@
                                     imgDiv.attr('src', image.src);
                                     autoScaling();
                                 }  else {
-                                 
+                                 // alert(e.target.result);
+                                      console.log("...");
                                  //this.select();
                                  //var img = document.selection.createRange().text;/
                                     var image = new Image();
@@ -124,6 +126,7 @@
                               try{
                                //Firefox7.0 以下                       
                                imgDiv.attr('src', file.getAsDataURL());
+
                               }catch(e){
                                //Firefox8.0以上                       
                                imgDiv.attr('src', window.URL.createObjectURL(file));
@@ -142,6 +145,8 @@
                                      var reader = new FileReader();
                                      reader.onload = function (e) {                                
                                       imgDiv.attr('src', e.target.result); 
+                                      //  alert(e.target.result);
+                                      // console.log("...");
                                      };
                                      reader.readAsDataURL(this.files[0]);
                                      setTimeout("autoScaling()", 100);
