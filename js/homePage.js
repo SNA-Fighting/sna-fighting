@@ -302,11 +302,11 @@ console.log(img[0].files[0]);
             });
         }
     }
-    reB.onclick = function() {
+    /*reB.onclick = function() {
         // form00.userName.innerTex='';
         // alert("---"+form00.userName.innerText);
         // alert("---"+inn.value);
-        /*$.ajax({
+        $.ajax({
                         type: "POST",
                         url: "fightCard.php",
                         contentType: "application/json",
@@ -318,7 +318,7 @@ console.log(img[0].files[0]);
                         error: function(){
                         window.alert("error");
                         }
-                        });*/
+                        });
         myAjax(function(output) {
             // here you use the output
             // $("#result").text(JSON.stringify(output));
@@ -328,7 +328,7 @@ console.log(img[0].files[0]);
             // alert("output: "+output);
         });
         // alert("....");
-    }
+    }*/
     /*  $("reB").click(function(){
                         $.ajax({url:"fightCard.php",success:function(result){
                         alert("....");
@@ -530,68 +530,68 @@ console.log(img[0].files[0]);
             scope: 'publish_actions,user_friends'
         });
     }
-    t.onmouseover = function() {
-        // alert("00");
-        var pinball = '<div  class="drop-shadow curved curved-vt-2"  id="tt"    style="position:absolute; width:500px; height:300px; z-index: 4; background-color:red"></div>';
-        $(t0).append(pinball);
-        var url = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949"
-        var tt = document.getElementById("tt");
-        // tt.style.zIndex="4"
-        var elem = document.createElement("img");
-        elem.setAttribute('style', 'border-radius:100%; border-color:#ffffff; cursor: pointer');
-        elem.setAttribute("height", "64");
-        elem.setAttribute("width", "64");
-        elem.setAttribute("alt", "Flower");
-        elem.setAttribute("id", "accoun");
-        // elem.setAttribute("draggable", "true");
-        elem.src = url;
-        tt.appendChild(elem);
-        tt.onmouseout = function() {
-            // alert("00");
-            $(tt).remove();
-            // tt.style.zIndex="1"
-        }
-        $(document).mousedown(function() {
-            // alert("0000");
-            // var flag = false;
-            var flag = true;
-            // alert("2");
-            // var stop;
-            // stop = setTimeout(function() {//down 1s，才运行。
-            //     flag = true;
-            //     elem.setAttribute('style', 'border-radius:100%; border-color:#ffffff; cursor: url("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949"); ');
-            //     // alert("开始处理你的代码.");
-            // }, 1000);
-            //                 $(accoun).mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
-            //                     if (!flag) {
-            //                         // clearTimeout(stop);
-            //                     }
-            //                 });
-            $(document).mouseup(function() {
-                flag = false;
-                // alert("1");
-            });
-            $(document).mousemove(function(e) {
-                if (flag)
-                    console.log(e.pageX + "," + e.pageY);
-                // alert("0.0");
-            });
-        });
-        /*$(accoun).mousedown(function() {
-                        // alert("0000");
-                        var flag = false;
-                        var stop;
-                        stop = setTimeout(function() {//down 1s，才运行。
-                        flag = true;
-                        alert("开始处理你的代码.");
-                        }, 1000);
-                        $(accoun).mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
-                        if (!flag) {
-                        clearTimeout(stop);
-                        }
-                        });
-                        });*/
-    }
+    // t.onmouseover = function() {
+    //     // alert("00");
+    //     var pinball = '<div  class="drop-shadow curved curved-vt-2"  id="tt"    style="position:absolute; width:500px; height:300px; z-index: 4; background-color:red"></div>';
+    //     $(t0).append(pinball);
+    //     var url = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949"
+    //     var tt = document.getElementById("tt");
+    //     // tt.style.zIndex="4"
+    //     var elem = document.createElement("img");
+    //     elem.setAttribute('style', 'border-radius:100%; border-color:#ffffff; cursor: pointer');
+    //     elem.setAttribute("height", "64");
+    //     elem.setAttribute("width", "64");
+    //     elem.setAttribute("alt", "Flower");
+    //     elem.setAttribute("id", "accoun");
+    //     // elem.setAttribute("draggable", "true");
+    //     elem.src = url;
+    //     tt.appendChild(elem);
+    //     tt.onmouseout = function() {
+    //         // alert("00");
+    //         $(tt).remove();
+    //         // tt.style.zIndex="1"
+    //     }
+    //     $(document).mousedown(function() {
+    //         // alert("0000");
+    //         // var flag = false;
+    //         var flag = true;
+    //         // alert("2");
+    //         // var stop;
+    //         // stop = setTimeout(function() {//down 1s，才运行。
+    //         //     flag = true;
+    //         //     elem.setAttribute('style', 'border-radius:100%; border-color:#ffffff; cursor: url("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1426023047_6cedfd551e9b7010980a042b0a52d949"); ');
+    //         //     // alert("开始处理你的代码.");
+    //         // }, 1000);
+    //         //                 $(accoun).mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
+    //         //                     if (!flag) {
+    //         //                         // clearTimeout(stop);
+    //         //                     }
+    //         //                 });
+    //         $(document).mouseup(function() {
+    //             flag = false;
+    //             // alert("1");
+    //         });
+    //         $(document).mousemove(function(e) {
+    //             if (flag)
+    //                 console.log(e.pageX + "," + e.pageY);
+    //             // alert("0.0");
+    //         });
+    //     });
+    //     /*$(accoun).mousedown(function() {
+    //                     // alert("0000");
+    //                     var flag = false;
+    //                     var stop;
+    //                     stop = setTimeout(function() {//down 1s，才运行。
+    //                     flag = true;
+    //                     alert("开始处理你的代码.");
+    //                     }, 1000);
+    //                     $(accoun).mouseup(function() {//鼠标up时，判断down了多久，不足一秒，不执行down的代码。
+    //                     if (!flag) {
+    //                     clearTimeout(stop);
+    //                     }
+    //                     });
+    //                     });*/
+    // }
 
     function loginStatus() {
         FB.getLoginStatus(function(res) {
