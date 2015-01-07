@@ -16,7 +16,7 @@ header{
 	position:relative;
 	width:70%;
 	height:auto;
-	left:13%;
+	left:8%;
 	display:inline-block;
 }
 .rightb{
@@ -30,9 +30,9 @@ header{
 	display:inline-block;
 	z-index:1;
 }
-.col-md-6{
+.card{
 	position:relative;
-	width:400px;
+	width:500px;
 	height:300px;
 	background:rgba(0,0,0,0.3);
 	margin:8px;
@@ -41,24 +41,19 @@ header{
 	position:relative;
 	width:100%;
 	height:40%;
-	border-bottom:solid 5px rgba(0,0,0,0.5);
-	border-top:solid 5px rgba(0,0,0,0.5);
-	border-left:solid 5px rgba(0,0,0,0.5);
 }
 .ff{
 	position:relative;
 	width:100%;
 	height:60%;
-	border-bottom:solid 5px rgba(0,0,0,0.5);
-	border-left:solid 5px rgba(0,0,0,0.5);
 }
 .progress{
 	position: relative;
 	width:50%;
 	margin:auto;
-	top:30px;
 	height:25px;
 	border:3px solid rgba(0,0,0,0.5);
+	display:inline-block;
 	opacity: 0.8;
 }
 .progress-bar-danger{
@@ -71,7 +66,6 @@ header{
 	position:relative;
 	border: 3px solid red; 
     border-radius: 99em;
-	left:10%;
     width:60px;
     height:60px;
 	background:rgba(255,0,0,0.5);
@@ -106,7 +100,7 @@ header{
 	position: relative;
 	border: 3px solid blue; 
     border-radius: 99em;
-	left:55%;
+	
     width:60px;
     height:60px;
     -webkit-box-shadow: 
@@ -144,7 +138,8 @@ header{
 }
 .qcontent{
 	position: relative;
-	top:26%;
+	top:33%;
+	left:12%;
 	margin:auto;
 }
 .btn-primary{
