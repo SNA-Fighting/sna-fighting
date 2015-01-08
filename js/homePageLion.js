@@ -1,4 +1,4 @@
-var currCardId = 88;
+var currCardId = 1;
 window.onload = function() {
     var loginB = document.getElementById("loginBtn");
     var reB = document.getElementById("reBtn");
@@ -496,7 +496,7 @@ window.onload = function() {
     }
     window.fbAsyncInit = function() {
         FB.init({
-            appId: '583196705148076',
+            appId: '1036093649749863',
             xfbml: true,
             version: 'v2.2'
         });
@@ -747,34 +747,16 @@ window.onload = function() {
 jQuery(document).ready(function() {
     // alert("0");
     interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax
-// interval = setInterval("testt()", 4000); //Set interval for accident checking ajax
+
 });
 // var a=0;
-  function testt() {
-       console.log("now: "+currCardId);
-        // alert("now: "+currCardId);
-    var formData = {
-        currCardId: currCardId
-    };
-        $.ajax({
-          type: "POST",
-        timeout: 3000,
-        url: 'getHomePageDataTest.php',
-        // 　contentType: "application/json",
 
-        data: formData,
-            success: function(data) {
-                console.log("max: "+data);
-                // alert(data);
-            }
-        });
-    }
 function checkNewUpdate() {
     // alert("...");
     check(function(output) {
         // console.log(output);
          // alert(currCardId);
-         // alert(output);
+         alert(output);
           console.log("in0  "+output.length);
         if(output.length){
              console.log("in");
@@ -788,8 +770,7 @@ function checkNewUpdate() {
             
             // alert(obj.price);
             // console.log(obj.length+"  "+obj[1].question_img);
-            for (var i = 0 ; i < obj.length ; i++) {
-                // for (var i = obj.length - 1; i >= 0; i--) {
+            for (var i = obj.length - 1; i >= 0; i--) {
 console.log("aa  "+obj[i].question_title );
                 var card = '<div class="row" id="card' + obj[i].question_id + '">' +
                     '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +

@@ -22,13 +22,13 @@ class Comment{
 class DB{
 	var $database=null;
 	function __construct(){
-		$dbhost="sql210.byethost7.com";
-		$account="b7_15725373";
+		$dbhost="mysql.lionfree.net";
+		$account="u497706260_v0";
 		$password="qwe123";
 		$this->database=mysql_connect($dbhost, $account,$password);
 		if($this->database){
 			// echo "DB connected";
-			$result=mysql_select_db("b7_15725373_v0",$this->database);
+			$result=mysql_select_db("u497706260_v0",$this->database);
 			// if($result){
 			// 	echo "DB selected";
 			// }

@@ -68,11 +68,11 @@ $target_path = "pic/";
 $target_path = $target_path .date("Ymdhis", time()).basename( $_FILES['file']['name']); 
 
 if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
-	echo 'http://fighting.lionfree.net/'.$target_path;
+	echo 'http://fighting.byethost7.com/'.$target_path;
     // echo "The file ".  basename( $_FILES['file']['name']). 
     // " has been uploaded";
 } else{
-    echo "There was an error uploading the file, please try again!";
+    echo "no";
 }
  // echo print_r($_POST['file'], true)
  //  file_put_contents('filename2.gif', print_r($_POST['file'], true));
