@@ -14,7 +14,6 @@ body{
 	height:600px;
 	width:100%;
 	background:rgba(255,255,255,0.95);
-	z-index:2;
 }
 .head{
 	position: relative;
