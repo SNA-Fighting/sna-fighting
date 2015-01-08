@@ -147,7 +147,23 @@ window.onload = function() {
                             // var googleLink = $("<a>").attr({
                             //     'href': 'http://www.google.com'
                             // }).text("Google");
-                            var card = '<div class="row">' +
+ var card ='<div class="card" >'+
+                           ' <div class="title">'+
+                                '<img src=" ' +pictureUrl + '" class="img-circle"/>'+userN2 + ' : ' +name+
+                            '</div>'+
+                            '<div class="qcontent">'+
+                                '<textarea style="overflow: hidden" class="red" id="Direction1">'+'對'+'</textarea>'+
+                                    '<div class="progress">'+
+                                    '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                                    '</div>'+
+                                    '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                                    '</div>'+
+                               ' </div>'+
+                               
+                             '   <textarea style="overflow: hidden"  class="blue" id="Direction2">'+'不對'+'</textarea>'+
+                            '</div>'+
+                        '</div>';
+                           /* var card = '<div class="row">' +
                                 '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +
                                 '<div class="col-md-12"> ' +
                                 '<form class="form-horizontal"> ' +
@@ -186,7 +202,7 @@ window.onload = function() {
                                 // '</div> ' +
                                 // '</div> ' +
                                 // elem.setAttribute("id", "account");
-                                '</form> </div></div>  </div>';
+                                '</form> </div></div>  </div>';*/
 
                             bootbox.dialog({
                                 title: "預覽問題",
@@ -746,6 +762,7 @@ window.onload = function() {
 }
 jQuery(document).ready(function() {
     // alert("0");
+    checkNewUpdate();
     interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax
 // interval = setInterval("testt()", 4000); //Set interval for accident checking ajax
 });
@@ -791,7 +808,7 @@ function checkNewUpdate() {
             for (var i = 0 ; i < obj.length ; i++) {
                 // for (var i = obj.length - 1; i >= 0; i--) {
 console.log("aa  "+obj[i].question_title );
-                var card = '<div class="row" id="card' + obj[i].question_id + '">' +
+               /* var card = '<div class="row" id="card' + obj[i].question_id + '">' +
                     '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +
                     '<div class="col-md-12"> ' +
                     '<form class="form-horizontal"> ' +
@@ -799,8 +816,8 @@ console.log("aa  "+obj[i].question_title );
                     '</br>' +
                     '<div class="form-group"> ' +
                     '<label class="col-md-4 control-label help-block" for="name">' +
-                    '<img height="64px" width="64px" src=' + obj[i].question_img + ' style="border-radius:40%; border-color:#ffffff; right:"5px">' +
-                    obj[i].u_id + ' : ' + '</label> ' +
+                    '<img height="64px" width="64px" src=' + obj[i].head + ' style="border-radius:40%; border-color:#ffffff; right:"5px">' +
+                    obj[i].name + ' : ' + '</label> ' +
                     '<br>' +
                     '<label class="control-label" style="font-size:30px rows:3">' + obj[i].question_title + '</label> ' +
                     '<div style="align: center;">' +
@@ -824,10 +841,26 @@ console.log("aa  "+obj[i].question_title );
                     obj[i].question_right +
                     '</textarea>' +
                     '</div>' +
-                    '</div>';
+                    '</div>';*/
+
+                    var card ='<div class="card" id="card' + obj[i].question_id + '">'+
+                           ' <div class="title">'+
+                                '<img src=" ' + obj[i].head + '" class="img-circle"/>'+obj[i].name + ' : ' +obj[i].question_title+
+                            '</div>'+
+                            '<div class="qcontent">'+
+                                '<textarea style="overflow: hidden" class="red">'+obj[i].question_left +'</textarea>'+
+                                    '<div class="progress">'+
+                                    '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                                    '</div>'+
+                                    '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                                    '</div>'+
+                               ' </div>'+
+                             '   <textarea style="overflow: hidden" class="blue">'+obj[i].question_right +'</textarea>'+
+                            '</div>'+
+                        '</div>';
                 // alert(obj[i].price);
                 // $("aa").append(card);
-                $("aa").prepend(card);
+                $('#aa').prepend(card);
                 // $("aa").prependTo(card);
             };
         }}

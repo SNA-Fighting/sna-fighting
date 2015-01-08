@@ -27,14 +27,27 @@ class getHomePageData extends DB{
 			 if($_POST['currCardId']<$maxId){*/
 
 			 	$re=mysql_query($sql);
-			$row = mysql_fetch_array($re);
-  $row[0];
+			$maxId = mysql_fetch_array($re);
+  // $row[0];
 			// echo "max:"maxId ;
-			 if($_POST['currCardId']<$row[0]){
+			 if($_POST['currCardId']<$maxId[0]){
 			 	$sql2 = "SELECT * FROM `question` HAVING question.question_id >'".$_POST['currCardId']."' ORDER BY question_id";
 
 			 	 $addMore=mysql_query($sql2);
 			 	 while ($tmp=mysql_fetch_array($addMore)) {
+			 	 	
+//u_id to Name
+			 	 	$sqlName = "SELECT user_name FROM `user` WHERE user_id= '".$tmp['u_id']."' ";
+			 	 	$re=mysql_query($sqlName);
+				$sqlN = mysql_fetch_array($re);
+			 	 	$tmp['name']=$sqlN[0];
+//u_id to head
+			 	 $sqlHead = "SELECT user_bighead FROM `user` WHERE user_id= '".$tmp['u_id']."' ";
+			 	 	$re=mysql_query($sqlHead);
+				$sqlH = mysql_fetch_array($re);
+			 	 	$tmp['head']=$sqlH[0];
+			 	 	/*$tmpName= 'name'+"=>" +"名字";
+			array_push($tmp, $tmpName);*/
 			 	 	// echo json_encode($tmp,JSON_UNESCAPED_UNICODE);
             // echo 
             array_push($output, $tmp);
