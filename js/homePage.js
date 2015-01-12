@@ -637,10 +637,10 @@ window.onload = function() {
                     // loginB.innerText = "";
                     var elem = document.createElement("img");
                     // elem.setAttribute('style', 'border-radius:40%; border-color:#ffffff; cursor: pointer; ');
-                    elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; ');
+                    elem.setAttribute('style', ' position: relative; right:5px;top: -13px; border-radius:40%; float:left; cursor: pointer; ');
                     elem.setAttribute("height", "48");
                     elem.setAttribute("width", "48");
-                    elem.setAttribute("alt", "Flower");
+                    // elem.setAttribute("alt", "Flower");
                     elem.setAttribute("id", "account");
                     // elem.onmouseover = function() {
                     //     elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; border-width:40px;  border: solid #fff; border-style:outset;');
@@ -765,11 +765,43 @@ window.onload = function() {
 }
 jQuery(document).ready(function() {
     // alert("0");
+    $(document).ready(function(){
+    $('.open-modal').click(function(){
+        $('#DemoModal').modal('show');
+    }); 
+    $('.close-modal').click(function(){
+        $('#DemoModal').modal('hide');
+    }); 
+});
 $('#dd').click(function() {
    $('#dd').animate({
    height: ($(this).height()*2),
    width: ($(this).width()*2)
 }, 1000);
+});
+
+$('#loginButton').click(function() {
+
+bootbox.dialog({
+                
+                message: 
+'<div id="loginform">'+
+'<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>'+
+'<div id="mainlogin">'+
+'<div id="or">or</div>'+
+'<h1>Log in with awesome new thing</h1>'+
+'<form action="#">'+
+'<input id="bootbox1" type="text" placeholder="username or email" value="" required>'+
+'<input id="bootbox2" type="password" placeholder="password" value="" required>'+
+'<button  id="bootboxBtn"  type="submit"><i class="fa fa-arrow-right"></i></button>'+
+'</form>'+
+'<div id="note"><a href="#">Forgot your password?</a></div>'+
+'</div>'+
+'</div>'
+               
+            }
+        );
+
 });
    /* checkNewUpdate();
     interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax*/
@@ -916,3 +948,13 @@ function addComment(name, comment) {
 //    // alert("0.0");
 //            $("input").uploadPreview({ width: 90, height: 110, imgDiv: "#imgDiv"});
 //        });
+
+// $(".modal").on("shown.bs.modal", function() {
+//   $("img").cropper({
+//     multiple: true,
+//     data: originalData,
+//     done: function(data) {
+//       console.log(data);
+//     }
+//   });
+// })
