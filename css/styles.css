@@ -12,19 +12,28 @@ header {
 	min-height:230px;
   	margin-bottom:5px;
 	position:relative;
-	top:10%;
+	top:7%;
+	width:100%;
+	text-align:center;
+	background:black;
 }
 
 @media (min-width: 979px) {
   #sidebar.affix-top {
       position: relative;
-      top: 90px;
+
+	  margin-left:15%;
+	  margin-right:3%;
+	  top:50px;
+
   }
   
   #sidebar.affix {
       position: fixed;
       top: 6%;
-      width:13%;
+
+      width:20%;
+
   }
 }
 
@@ -35,11 +44,14 @@ header {
 /* theme */
 
 body {
-  color:#828282;
-  background-color:#eee;
+  /*color:#828282;
+  background-color:#eee;*/
+  background:rgba(255,255,255,0.3);
   font-family: Microsoft JhengHei,Arial, Helvetica, sans-serif;
 }
-
+/*.bgc{
+	background:rgba(255,255,255,0.4);
+}*/
 a,a:hover {
 	color:#ff3333;
   	text-decoration:none;
@@ -63,6 +75,7 @@ h3.highlight  {
 
 .navbar {
 	z-index:2;
+	height:52px;
 	position:fixed;
 	width:100%;
 	background-color:#ff3333;
@@ -132,17 +145,20 @@ h3.highlight  {
 
 /* Post */
 .post {
-  width: 580px;
   position:relative;
-  top:95px;
-  margin-bottom: 75px;
+
+  top:80px;
+  margin-left:8%;
+  margin-right:8%;
+  margin-bottom: 35px;
+
   padding: 20px 20px;
   background: #FFFFFF;
   color: #DA4C15;
 -webkit-border-radius: 20px 5px 20px 5px;
 border-radius: 20px 5px 20px 5px;
--webkit-box-shadow: 5px 10px 20px 1px #615285;
-box-shadow: 5px 10px 20px 1px #615285;
+/*-webkit-box-shadow: 5px 10px 20px 1px #615285;
+box-shadow: 3px 3px 10px 1px #615285;*/
 }
 
 .post .title {
