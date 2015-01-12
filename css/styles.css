@@ -11,6 +11,8 @@
 header {
 	min-height:230px;
   	margin-bottom:5px;
+	position:relative;
+	top:10%;
 }
 
 @media (min-width: 979px) {
@@ -20,7 +22,7 @@ header {
   
   #sidebar.affix {
       position: fixed;
-      top: 0;
+      top: 6%;
       width:21.2%;
   }
 }
@@ -59,6 +61,9 @@ h3.highlight  {
 }
 
 .navbar {
+	z-index:2;
+	position:fixed;
+	width:100%;
 	background-color:#ff3333;
   	color:#ffffff;
     border:0;
@@ -125,9 +130,10 @@ h3.highlight  {
 /* end theme */
 
 /* Post */
-
 .post {
   width: 580px;
+  position:relative;
+  top:30px;
   margin-bottom: 75px;
   padding: 20px 20px;
   background: #FFFFFF;
