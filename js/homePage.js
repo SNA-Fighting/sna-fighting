@@ -25,27 +25,28 @@ window.onload = function() {
     var haveName, havePic;
     var fd = new FormData();
 
-    document.onclick = function(event) {
-        var e = event || window.event;
-        var elem = e.srcElement || e.target;
-        // while(elem)
-        // {
-        if (elem.id == "account") {
-            // alert('1');
-            openclose();
-            return;
-        }
-        // alert('2');
-        // elem = elem.parentNode;
-        // }
-        var panel = document.getElementById('sections_panel'),
-            maxH = "200px";
-        if (panel.style.height == maxH) {
-            panel.style.height = "0px";
-            document.getElementById('account').setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:0px;  ');
-            // navarrow.innerHTML = "&#9662;";
-        }
-    }
+    // document.onclick = function(event) {
+    //     var e = event || window.event;
+    //     var elem = e.srcElement || e.target;
+    //     // while(elem)
+    //     // {
+    //     if (elem.id == "account") {
+    //         // alert('1');
+    //         openclose();
+    //         return;
+    //     }
+    //     // alert('2');
+    //     // elem = elem.parentNode;
+    //     // }
+    //     var panel = document.getElementById('sections_panel'),
+    //         maxH = "200px";
+    //     if (panel.style.height == maxH) {
+    //         panel.style.height = "0px";
+    //         document.getElementById('account').setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:0px;  ');
+    //         // navarrow.innerHTML = "&#9662;";
+    //     }
+    // }
+
     if (loginB) {
         loginB.onclick = function() {
             // alert("0.0");
@@ -70,6 +71,7 @@ window.onload = function() {
             });
         }
     }
+    if(askBtn)
     askBtn.onclick = function() {
         if (logined) { //testL
             bootbox.dialog({
@@ -634,30 +636,31 @@ window.onload = function() {
                     userData.removeChild(loginB)
                     // loginB.innerText = "";
                     var elem = document.createElement("img");
-                    elem.setAttribute('style', 'border-radius:40%; border-color:#ffffff; cursor: pointer; ');
+                    // elem.setAttribute('style', 'border-radius:40%; border-color:#ffffff; cursor: pointer; ');
+                    elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; ');
                     elem.setAttribute("height", "64");
                     elem.setAttribute("width", "64");
                     elem.setAttribute("alt", "Flower");
                     elem.setAttribute("id", "account");
-                    elem.onmouseover = function() {
-                        elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; border-width:40px;  border: solid #fff; border-style:outset;');
-                    }
-                    elem.onmouseout = function() {
-                        var panel = document.getElementById('sections_panel'),
-                            maxH = "200px";
-                        if (panel.style.height != maxH) {
-                            elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:0px;  ');
-                            // alert("0...0");
-                        } else {
-                            elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
-                        }
-                    }
-                    elem.onclick = function() {
-                        elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
-                        // alert("0.0");
-                        // openclose();
-                        // alert("...");
-                    }
+                    // elem.onmouseover = function() {
+                    //     elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; border-width:40px;  border: solid #fff; border-style:outset;');
+                    // }
+                    // elem.onmouseout = function() {
+                    //     var panel = document.getElementById('sections_panel'),
+                    //         maxH = "200px";
+                    //     if (panel.style.height != maxH) {
+                    //         elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:0px;  ');
+                    //         // alert("0...0");
+                    //     } else {
+                    //         elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
+                    //     }
+                    // }
+                    // elem.onclick = function() {
+                    //     elem.setAttribute('style', ' border-radius:40%;  cursor: pointer; border-width:40px; border: solid #ababab; ');
+                    //     // alert("0.0");
+                    //     // openclose();
+                    //     // alert("...");
+                    // }
                     elem.src = pictureUrl;
                     userData.appendChild(elem);
                     // userData.insertBefore(elem, document.getElementById('arrow'));
@@ -762,8 +765,14 @@ window.onload = function() {
 }
 jQuery(document).ready(function() {
     // alert("0");
-    checkNewUpdate();
-    interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax
+$('#dd').click(function() {
+   $('#dd').animate({
+   height: ($(this).height()*2),
+   width: ($(this).width()*2)
+}, 1000);
+});
+   /* checkNewUpdate();
+    interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax*/
 // interval = setInterval("testt()", 4000); //Set interval for accident checking ajax
 });
 // var a=0;
