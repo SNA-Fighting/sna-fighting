@@ -17,13 +17,14 @@ header {
 
 @media (min-width: 979px) {
   #sidebar.affix-top {
-      position: static;
+      position: relative;
+      top: 90px;
   }
   
   #sidebar.affix {
       position: fixed;
       top: 6%;
-      width:21.2%;
+      width:13%;
   }
 }
 
@@ -133,7 +134,7 @@ h3.highlight  {
 .post {
   width: 580px;
   position:relative;
-  top:30px;
+  top:95px;
   margin-bottom: 75px;
   padding: 20px 20px;
   background: #FFFFFF;

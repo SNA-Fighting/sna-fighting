@@ -638,8 +638,8 @@ window.onload = function() {
                     var elem = document.createElement("img");
                     // elem.setAttribute('style', 'border-radius:40%; border-color:#ffffff; cursor: pointer; ');
                     elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; ');
-                    elem.setAttribute("height", "64");
-                    elem.setAttribute("width", "64");
+                    elem.setAttribute("height", "48");
+                    elem.setAttribute("width", "48");
                     elem.setAttribute("alt", "Flower");
                     elem.setAttribute("id", "account");
                     // elem.onmouseover = function() {
