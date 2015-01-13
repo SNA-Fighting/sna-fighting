@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf8" content="text/html">
+	<head>
+		<meta charset="utf8" content="text/html">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title></title>
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="css/agency.css" rel="stylesheet">
         <link href="css/other.css" rel="stylesheet">
 		<link href="css/ask.css" rel="stylesheet" type="text/css" />
-        <!-- Custom Fonts -->
+		<script src="js/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/book.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<!-- Custom Fonts -->
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
@@ -34,63 +37,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
-    <body id="page-top" class="index" >
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">Fighting!!!</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" id="askBtn" href="#">ask</a>             
-                        </li>
-                        <li id='userD'>
-                            <a class="page-scroll" id="loginBtn" href="#">login</a>
-                            <!--<div id="sections_btn_holder">
-                                    <button id='testBtn'>Navigator <span id="navarrow">&#9662;</span></button>
-                                </div> -->
-                            <!-- <div id="sections_panel" class="longen">   -->
-                            <!-- <div id="menu"> -->
-                            <!-- <div id="arrow-up"></div> -->
-                            <div id="sections_panel" >
-                            <div>Hi,
-								<p id='account_name'></p>
-                                <button type="button" class="btn-info" width="48px" height="48px" >已發過問題</button>
-                                <button type="button" class="btn-warning" >登出</button>
-                            </div>
-                            </div>
-                            </div>
-                        </li>
-                    </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                    </div>
-                    <!-- /.container-fluid -->
-        </nav>
-        <!-- Header -->
-        <header>
-            <div class="container">
-                <div class="intro-text">
-                    <div class="intro-lead-in">V.S.</div>
-                    </div>
-                </div>
-			</div>
-        </header>
-        <!-- Portfolio Grid Section -->
+	</head>
+	<body>
 		<div class="container-fluid">
 			<div id="top">
 				<div class="head">
@@ -98,12 +46,18 @@
 					<div id="sharebtn">share</div>
 				</div>
 				<div id="vote">
-					<div class="red"></div>
-					<div class="blue"></div>
+					<div class="opt1">
+						<a href="#" class="tip1"><span>選項一</span></a>
+						<img class="man"id="man1" src="man1.png"/>
+					</div>
+					<div class="opt2">
+						<a href="#" class="tip2"><span>選項二</span></a>
+						<img class="man"id="man2" src="man2.png"/>
+					</div>
 					<div class="progress" id="votebar">
-						<div id="lbar" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+						<div class="progress-bar progress-bar-red progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
 						</div>
-						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+						<div class="progress-bar progress-bar-black progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
 						</div>
 					</div>
 				</div>
@@ -206,45 +160,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="description">
-					<div id="dtitle">故事描述:</div>
-					<div id="dcontent">
-						<pre>
-				用pre測試一下
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-						</pre>
-					</div>
-					<div id="dimg">
-					</div>
+			<div id="haha">
 			</div>
 		</div>
         <!-- jQuery -->
@@ -259,5 +175,5 @@
         <script src="js/jqBootstrapValidation.js"></script>               
         <!-- Custom Theme JavaScript -->
         <script src="js/agency.js"></script>
-    </body>
+	</body>
 </html>
