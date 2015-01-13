@@ -160,7 +160,7 @@ h3.highlight  {
 border-radius: 20px 5px 20px 5px;
 /*-webkit-box-shadow: 5px 10px 20px 1px #615285;
 box-shadow: 3px 3px 10px 1px #615285;*/
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   font-size: 30px;
   /*color: #238EC6;*/
   color: #DA4C15;

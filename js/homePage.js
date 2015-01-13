@@ -11,7 +11,7 @@ window.onload = function() {
     var myMenu = document.getElementById("myMenu");
     var myMenu_con = document.getElementById("acc_opt");
     // var test = document.getElementById("testBtn");
-    var card = document.getElementById("card");
+    // var card = document.getElementById("card");
     var bar1 = document.getElementById("bar1");
     var bar2 = document.getElementById("bar2");
     var t = document.getElementById("t");
@@ -24,7 +24,7 @@ window.onload = function() {
     var fbId;
     var haveName, havePic;
     var fd = new FormData();
-
+var card;
     // document.onclick = function(event) {
     //     var e = event || window.event;
     //     var elem = e.srcElement || e.target;
@@ -88,7 +88,7 @@ objContainer.innerHTML = strBlocksHTML;*/
 
     if(askBtn)
     askBtn.onclick = function() {
-        if (!logined) { //testL
+        if (logined) { //testL
             bootbox.dialog({
                 title: "問一個問題",
                 message: '<div class="row">  ' +
@@ -164,7 +164,74 @@ objContainer.innerHTML = strBlocksHTML;*/
                             // var googleLink = $("<a>").attr({
                             //     'href': 'http://www.google.com'
                             // }).text("Google");
- var card ='<div class="card" >'+
+ card='<div class="post">'+
+                    '<h2 class="title"><a href="#">'+name +'</a></h2>'+
+                    '<p class="meta">2014-1-13 12:10 Posted by <a href="#">'+userN2+'</a></p>'+
+                    
+                    '<div class="entry" align="center">'+
+                      '<div class="opt1">'+
+                        '<a href="#" class="tip1"><span>'+'左方'+'</span></a>'+
+                        '<img class="man"id="man1" src="img/man1.png"/>'+
+                      '</div>'+
+                      '<div class="opt2">'+
+                        '<a href="#" class="tip2"><span>'+'右方'+'</span></a>'+
+                        '<img class="man"id="man2" src="img/man2.png"/>'+
+                      '</div>'+
+                      '<!-- book start -->'+
+                      '<figure align="center" id="dd" class="book">'+
+                        '<!-- Front -->'+
+                        '<ul class="hardcover_front">'+
+                          '<li>'+
+                            '<div class="coverDesign blue">'+
+                              '<span class="ribbon">hot</span>'+
+                              '<img style="position:relative;top:10px;" src="'+pictureUrl+'">'+
+                              '<h1>'+name+'</h1>'+
+                              
+                            '</div>'+
+                          '</li>'+
+                    //        '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
+                    // '<div id="imgDiv"> </div>' +
+                    // ' </div>' +
+                    // '  $("input#pic").uploadPreview({ width: 300, height: 360, imgDiv: "#imgDiv"});' +
+                    // '});' +
+                          '<li></li>'+
+                        '</ul>'+
+                        '<!-- Pages -->'+
+                        '<ul class="page">'+
+                          '<li></li>'+
+                          '<li>'+
+story
+                            // 'Andorid因為買不起Ios'+
+                          '</li>'+
+                          '<li></li><li></li>'+
+                          '<li></li>'+
+                        '</ul>'+
+                        '<!-- Back -->'+
+                        '<ul class="hardcover_back">'+
+                          '<li></li>'+
+                          '<li></li>'+
+                        '</ul>'+
+                        '<ul class="book_spine">'+
+                          '<li></li>'+
+                          '<li></li>'+
+                        '</ul>'+
+                        
+                      '</li>'+
+                      '<li>'+
+                        '<!-- book end -->'+
+                      '</div>'+
+                      '<div class="progress">'+
+                        '<div class="progress-bar progress-bar-red progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                        '</div>'+
+                        '<div class="progress-bar progress-bar-black progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                       '</div>'+
+            
+              '</div>';
+
+
+
+
+ /*var card2 ='<div class="card" >'+
                            ' <div class="title">'+
                                 '<img src=" ' +pictureUrl + '" class="img-circle"/>'+userN2 + ' : ' +name+
                             '</div>'+
@@ -179,7 +246,7 @@ objContainer.innerHTML = strBlocksHTML;*/
                                
                              '   <textarea style="overflow: hidden"  class="blue" id="Direction2">'+'不對'+'</textarea>'+
                             '</div>'+
-                        '</div>';
+                        '</div>';*/
                            /* var card = '<div class="row">' +
                                 '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +
                                 '<div class="col-md-12"> ' +
@@ -240,6 +307,7 @@ objContainer.innerHTML = strBlocksHTML;*/
                                             // save2(img[0].files[0]);
                                             // save2(new FormData(img[0].files[0]));
                                             //testl
+                                            $("#aa").prepend(card);
                                             var da;
 
                                             da = new FormData();
@@ -300,7 +368,7 @@ objContainer.innerHTML = strBlocksHTML;*/
 
                                             // saveQ(name,story,img[0].files[0],dir1,dir2,fbId);
 
-                                            // $("aa").append(card);
+                                             
                                         }
                                     }
 
