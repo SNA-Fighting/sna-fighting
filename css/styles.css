@@ -1,7 +1,7 @@
 /* bootstrap 3 helpers */
 
 .navbar-form input, .form-inline input {
-	width:auto;
+  width:auto;
 }
 
 /* end */
@@ -9,23 +9,23 @@
 /* custom theme */
 
 header {
-	min-height:230px;
-  	margin-bottom:5px;
-	position:relative;
-	top:50px;
-	width:100%;
+  min-height:230px;
+    margin-bottom:5px;
+  position:relative;
+  top:50px;
+  width:100%;
   height: 200px;
-	text-align:center;
-	background:black;
+  text-align:center;
+  background:#333333;
 }
 
 @media (min-width: 979px) {
   #sidebar.affix-top {
       position: relative;
 
-	  margin-left:15%;
-	  margin-right:3%;
-	  top:50px;
+    margin-left:15%;
+    margin-right:3%;
+    top:50px;
 
   }
   
@@ -51,59 +51,59 @@ body {
   font-family: Microsoft JhengHei,Arial, Helvetica, sans-serif;
 }
 /*.bgc{
-	background:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.4);
 }*/
 a,a:hover {
-	color:#ffffff;
-  	text-decoration:none;
+  color:#ffffff;
+    text-decoration:none;
 }
 
 .highlight-bk {
-	background-color:#cc0001;
+  background-color:#cc0001;
     padding:1px;
     width:100%;
 }
 
 .highlight {
-	color:#cc0001;
+  color:#cc0001;
 }
   
 h3.highlight  {
-	padding-top:13px;
+  padding-top:13px;
     padding-bottom:14px;
-  	border-bottom:2px solid #cc0001;
+    border-bottom:2px solid #cc0001;
 }
 
 .navbar {
-	z-index:2;
-	height:52px;
-	position:fixed;
-	width:100%;
-	background-color:#cc0001;
-  	color:#ffffff;
+  z-index:2;
+  height:52px;
+  position:fixed;
+  width:100%;
+  background-color:#cc0001;
+    color:#ffffff;
     border:0;
-  	border-radius:0;
+    border-radius:0;
 }
 .navbar-nav > li > a {
-  	color:#fff;
-  	padding-left:20px;
-  	padding-right:20px;
-  	border-left:1px solid #ee3333;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    border-left:1px solid #ee3333;
 }
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
     color:#666666; 
 }
 .navbar-nav > li:last-child > a {
-  	border-right:1px solid #ee3333;
+    border-right:1px solid #ee3333;
 }
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     color: #ffffff;
-	background-color:transparent;
+  background-color:transparent;
 }
 .navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
-	color: #f0f0f0;
-	background-color:transparent;
-  	opacity:.9;
+  color: #f0f0f0;
+  background-color:transparent;
+    opacity:.9;
     border-color:#cc0001;
 }
 
@@ -113,32 +113,32 @@ h3.highlight  {
 }
 
 .accordion-group {
-	border-width:0;
+  border-width:0;
 }
 
 .dropdown-menu {
-	min-width: 250px;
+  min-width: 250px;
 }
 
 .accordion-heading .accordion-toggle, .accordion-inner, .nav-stacked li > a {
-	padding-left:1px;
+  padding-left:1px;
 }
 
 .caret {
-	color:#fff;
+  color:#fff;
 }
 
 .navbar-toggle {
-	color:#fff;
+  color:#fff;
     border-width:0;
 }
   
 .navbar-toggle:hover {
-	background-color:#fff;
+  background-color:#fff;
 }
 
 .panel {
-	padding-left:27px;
+  padding-left:27px;
     padding-right:27px;
 }
 
@@ -229,7 +229,7 @@ box-shadow: 3px 3px 10px 1px #615285;*/
 /*bootbox*/
 #loginform
 {
-width:550px;
+width:650px;
 height:auto;
 position:relative;
 margin:0 auto;
@@ -246,7 +246,7 @@ padding:12px 20px 12px 10px;
 border:none;
 color:#929999;                       
 box-shadow:inset 0px 1px 5px #272727;
-font-size:0.8em;
+font-size:1.2em;
 -webkit-transition:0.5s ease;
 -moz-transition:0.5s ease;
 -o-transition:0.5s ease;
@@ -338,14 +338,14 @@ color:#929999;
 {
 text-align:center;
 color:#fff;
-font-size:13px;
+font-size:16px;
 padding:12px 0px;
 }
 
 #loginform #note
 {
 color:#88887a;
-font-size: 0.8em;
+font-size: 1.0em;
 text-align:left;
 padding-left:5px;
 }
@@ -356,8 +356,8 @@ text-align:center;
 float:left;
 background:#365195;
 padding:35px 10px 20px 10px;
-width:170px;
-height:135px; 
+width:250px;
+height:230px; 
 border-radius:3px;
 cursor:pointer;
 box-shadow: 0px 0px 10px 2px #161718; 
@@ -382,7 +382,7 @@ transition:0.5s ease;
 #loginform .fa-facebook
 {
 color:#fff;
-font-size:7em;
+font-size:11em;
 display:block;
 }
 
@@ -411,8 +411,8 @@ transition:0.5s ease;
 #loginform #mainlogin
 {
 float:left;
-width:250px;
-height:170px;
+width:300px;
+height:230px;
 padding:10px 15px;
 position:relative;
 background:#555555;
@@ -437,11 +437,96 @@ top: 10px;
 background:#222222;
 text-shadow:0 2px 0px #121212;
 color:#999999;
-width:40px;
-height:40px;
+width:50px;
+height:50px;
 text-align:center;
 border-radius:50%;
 font-weight:bold;
 line-height:38px;
-font-size: 13px;
+font-size: 17px;
+}
+/*bubble1*/
+/*a.tip2 {
+  position: relative;
+  text-decoration: none;
+}
+a.tip2 span {display: none;}
+a.tip2:hover span {
+  display: block;
+  position: absolute; 
+  padding: .5em;
+  content: attr(title);
+  min-width: 120px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  top: -32px;
+  background: rgba(0,0,0,1);
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;    
+  color: #fff;
+  font-size: .86em;
+}
+a.tip2:hover span:after {
+  position: absolute;
+  display: block;
+  content: "";  
+  border-color: rgba(0,0,0,1) transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom: -16px;
+  left:1em;
+}*/
+a.tip2 {
+  position: relative;
+  text-decoration: none;
+}
+a.tip2 span {
+  display: block;
+  position: absolute; 
+  padding: .5em;
+  content: attr(title);
+  min-width: 120px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  top: -32px;
+  background: rgba(0,0,0,1);
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;    
+  color: #fff;
+  font-size: .86em;
+}
+a.tip2 span:after {
+  position: absolute;
+  display: block;
+  content: "";  
+  border-color: rgba(0,0,0,1) transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  bottom: -16px;
+  left:1em;
+}
+/*Pyramid*/ 
+.buildingBlock {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin:-1px 3px;
+    background-color:#eee;
+    border:2px solid #ccc;
+    border-radius:100%;
+}
+#containerpy {
+    text-align:center;
 }

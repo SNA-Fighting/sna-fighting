@@ -47,33 +47,48 @@ window.onload = function() {
     //     }
     // }
 
-    if (loginB) {
-        loginB.onclick = function() {
-            // alert("0.0");
-            BootstrapDialog.show({
-                title: 'Login',
-                message: 'Login to join fighting',
-                cssClass: 'login-dialog',
-                buttons: [{
-                    label: 'Login with Facebook',
-                    cssClass: 'btn-primary',
-                    action: function(dialog) {
-                        fbLogin();
-                        dialog0 = dialog;
-                    }
-                }, {
-                    label: 'Cancel',
-                    cssClass: 'btn-cancel',
-                    action: function(dialog) {
-                        dialog.close();
-                    }
-                }]
-            });
-        }
+    // if (loginB) {
+    //     loginB.onclick = function() {
+    //         // alert("0.0");
+    //         BootstrapDialog.show({
+    //             title: 'Login',
+    //             message: 'Login to join fighting',
+    //             cssClass: 'login-dialog',
+    //             buttons: [{
+    //                 label: 'Login with Facebook',
+    //                 cssClass: 'btn-primary',
+    //                 action: function(dialog) {
+    //                     fbLogin();
+    //                     dialog0 = dialog;
+    //                 }
+    //             }, {
+    //                 label: 'Cancel',
+    //                 cssClass: 'btn-cancel',
+    //                 action: function(dialog) {
+    //                     dialog.close();
+    //                 }
+    //             }]
+    //         });
+    //     }
+    // }
+   /* var objContainer = document.getElementById( "containerpy" ),
+    intLevels = 2,
+    strBlocksHTML = '';
+    
+// Using innerHTML is faster than DOM appendChild
+for( var i=0; i<intLevels; i++ ){
+    for( var n=0; n<i+1; n++ ){
+        strBlocksHTML += '<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c9.29.155.155/s50x50/1654092_743214245703461_1646241684_n.jpg?oh=1e425d1f127c789f00294f41323425b1&oe=5538EC1C&__gda__=1428615047_43cb49b5c5e7b2f6381b6ee1d8907161" class="buildingBlock"></img>';
     }
+    strBlocksHTML += '<div></div>'; // Line break after each row
+}
+
+objContainer.innerHTML = strBlocksHTML;*/
+
+
     if(askBtn)
     askBtn.onclick = function() {
-        if (logined) { //testL
+        if (!logined) { //testL
             bootbox.dialog({
                 title: "問一個問題",
                 message: '<div class="row">  ' +
@@ -109,7 +124,7 @@ window.onload = function() {
                     ' <input id="pic"  type="file" accept="image/*" value="上傳文件">' +
                 // '<input type="file" name="file1" size="20" id="file1" />' +
                 //   '上傳圖片預覽:<br>' +
-                '<div style="width:90px; height:110px; overflow:hidden; border:1px solid red;">' +
+                '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
                     '<div id="imgDiv"> </div>' +
                     ' </div>' +
                     ' <br>' +
@@ -118,7 +133,7 @@ window.onload = function() {
                 ' <script type="text/javascript">' +
                     '$(document).ready(function() {' +
 
-                '  $("input#pic").uploadPreview({ width: 90, height: 110, imgDiv: "#imgDiv"});' +
+                '  $("input#pic").uploadPreview({ width: 300, height: 360, imgDiv: "#imgDiv"});' +
                     '});' +
 
                 '</script>' +
@@ -300,23 +315,23 @@ window.onload = function() {
                 }
 
             });
-        } else {
-            BootstrapDialog.show({
-                title: 'Login',
-                message: 'Login to ask question',
-                cssClass: 'login-dialog',
-                buttons: [{
-                    label: 'Login with Facebook',
-                    cssClass: 'btn-primary',
-                    action: function(dialog) {
-                        fbLogin();
-                    }
-                }, {
-                    label: 'Cancel',
-                    cssClass: 'btn-cancel',
-                    action: function(dialog) {}
-                }]
-            });
+        } else {$('#DemoModal').modal('show');
+            // BootstrapDialog.show({
+            //     title: 'Login',
+            //     message: 'Login to ask question',
+            //     cssClass: 'login-dialog',
+            //     buttons: [{
+            //         label: 'Login with Facebook',
+            //         cssClass: 'btn-primary',
+            //         action: function(dialog) {
+            //             fbLogin();
+            //         }
+            //     }, {
+            //         label: 'Cancel',
+            //         cssClass: 'btn-cancel',
+            //         action: function(dialog) {}
+            //     }]
+            // });
         }
     }
     /*reB.onclick = function() {
@@ -403,7 +418,9 @@ window.onload = function() {
             // dataType: 'json',
             // data: {functionname: 'test',arguments:['f','ox']},
             success: function(data0) {
-                alert("登入成功");
+                // alert("登入成功");
+                $('#inout').innerText='logout';
+                $('#DemoModal').modal('hide');
             }
         });
     }
@@ -612,7 +629,16 @@ window.onload = function() {
     //                     });
     //                     });*/
     // }
-
+$(document).ready(function(){
+    $('.open-modal').click(function(){
+        $('#DemoModal').modal('show');
+$('#facebook').click(function(){
+        fbLogin();
+    });  }); 
+    $('.close-modal').click(function(){
+        $('#DemoModal').modal('hide');
+    }); 
+});
     function loginStatus() {
         FB.getLoginStatus(function(res) {
             if (res.status == "connected") {
@@ -623,7 +649,7 @@ window.onload = function() {
                     fbId = fbUser.id;
                     // alert(fbId);
                     first(0);
-                    document.getElementById('account_name').innerText = userN2;
+                    // document.getElementById('account_name').innerText = userN2;
                 });
                 FB.api('/me/picture', function(response) {
                     // var url = $.parseJSON(fbUser).url;
@@ -642,6 +668,7 @@ window.onload = function() {
                     elem.setAttribute("width", "48");
                     // elem.setAttribute("alt", "Flower");
                     elem.setAttribute("id", "account");
+                    $('#inout').text('logout');
                     // elem.onmouseover = function() {
                     //     elem.setAttribute('style', 'border-radius:40%;  cursor: pointer; border-width:40px;  border: solid #fff; border-style:outset;');
                     // }
@@ -765,44 +792,38 @@ window.onload = function() {
 }
 jQuery(document).ready(function() {
     // alert("0");
-    $(document).ready(function(){
-    $('.open-modal').click(function(){
-        $('#DemoModal').modal('show');
-    }); 
-    $('.close-modal').click(function(){
-        $('#DemoModal').modal('hide');
-    }); 
-});
+    
 $('#dd').click(function() {
-   $('#dd').animate({
-   height: ($(this).height()*2),
-   width: ($(this).width()*2)
-}, 1000);
+    // $('#big').modal('show');
+//    $('#dd').animate({
+//    height: ($(this).height()*2),
+//    width: ($(this).width()*2)
+// }, 1000);
 });
 
-$('#loginButton').click(function() {
+// $('#loginButton').click(function() {
 
-bootbox.dialog({
+// bootbox.dialog({
                 
-                message: 
-'<div id="loginform">'+
-'<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>'+
-'<div id="mainlogin">'+
-'<div id="or">or</div>'+
-'<h1>Log in with awesome new thing</h1>'+
-'<form action="#">'+
-'<input id="bootbox1" type="text" placeholder="username or email" value="" required>'+
-'<input id="bootbox2" type="password" placeholder="password" value="" required>'+
-'<button  id="bootboxBtn"  type="submit"><i class="fa fa-arrow-right"></i></button>'+
-'</form>'+
-'<div id="note"><a href="#">Forgot your password?</a></div>'+
-'</div>'+
-'</div>'
+//                 message: 
+// '<div id="loginform">'+
+// '<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>'+
+// '<div id="mainlogin">'+
+// '<div id="or">or</div>'+
+// '<h1>Log in with awesome new thing</h1>'+
+// '<form action="#">'+
+// '<input id="bootbox1" type="text" placeholder="username or email" value="" required>'+
+// '<input id="bootbox2" type="password" placeholder="password" value="" required>'+
+// '<button  id="bootboxBtn"  type="submit"><i class="fa fa-arrow-right"></i></button>'+
+// '</form>'+
+// '<div id="note"><a href="#">Forgot your password?</a></div>'+
+// '</div>'+
+// '</div>'
                
-            }
-        );
+//             }
+//         );
 
-});
+// });
    /* checkNewUpdate();
     interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax*/
 // interval = setInterval("testt()", 4000); //Set interval for accident checking ajax
