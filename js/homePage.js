@@ -200,7 +200,7 @@ objContainer.innerHTML = strBlocksHTML;*/
                         '<ul class="page">'+
                           '<li></li>'+
                           '<li>'+
-story
+story+
                             // 'Andorid因為買不起Ios'+
                           '</li>'+
                           '<li></li><li></li>'+
