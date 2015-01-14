@@ -3,6 +3,7 @@ window.onload = function() {
    
 $(document).ready(function() {
     $("#ll").click(function(){
+        // bootbox.alert("Hello world!");
         bootbox.prompt({
   title: "What is your real name?",
   value: "makeusabrew",
@@ -47,7 +48,7 @@ $(document).ready(function() {
                         });
                         var l='<div class="left">'+
                             '<div class="dhead">'+
-                                '<img src="img/dog.jpg"/>'+
+                                '<img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/v/t1.0-1/c23.23.283.283/s50x50/283801_253710801313578_1401511_n.jpg?oh=33d2c2ed846c789b63bd9ca051618bd9&oe=5529FA40&__gda__=1429521094_a8327d1de098ebb04ce93c0501c8f6ba"/>'+
                             '安安'+
                             '</div>'+
 
