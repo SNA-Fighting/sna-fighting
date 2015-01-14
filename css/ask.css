@@ -207,12 +207,12 @@ a.tip2 span:after {
 	background-color:rgba(0,0,0,1);
 }
 #votebar{
-	top:150px;
+	top:200px;
 }
 .entry{
 	position:relative;
 	left:45%;
-	top:10%;
+	top:15%;
 }
 .book{
 	transform:scale(1.5);
