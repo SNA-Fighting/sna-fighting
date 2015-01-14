@@ -435,6 +435,7 @@ story
                         // $("#form0").userName.html("result");
                         }});
                         });*/
+
     function myAjax(handleData) {
         var formData = {
             userName: inn0.value,
@@ -705,6 +706,7 @@ $('#facebook').click(function(){
     });  }); 
     $('.close-modal').click(function(){
         $('#DemoModal').modal('hide');
+        $('#DemoModal2').modal('hide');
     }); 
 });
     function loginStatus() {
@@ -862,6 +864,10 @@ jQuery(document).ready(function() {
     // alert("0");
     
 $('#dd').click(function() {
+$('#DemoModal2').modal('show');
+                    // alert("..");
+                       // window.open ('ask.html','_self',false);
+                  
     // $('#big').modal('show');
 //    $('#dd').animate({
 //    height: ($(this).height()*2),
