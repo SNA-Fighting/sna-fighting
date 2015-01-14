@@ -24,7 +24,7 @@ window.onload = function() {
     var fbId;
     var haveName, havePic;
     var fd = new FormData();
-var card;
+    var card;
     // document.onclick = function(event) {
     //     var e = event || window.event;
     //     var elem = e.srcElement || e.target;
@@ -71,7 +71,7 @@ var card;
     //         });
     //     }
     // }
-   /* var objContainer = document.getElementById( "containerpy" ),
+    /* var objContainer = document.getElementById( "containerpy" ),
     intLevels = 2,
     strBlocksHTML = '';
     
@@ -86,62 +86,154 @@ for( var i=0; i<intLevels; i++ ){
 objContainer.innerHTML = strBlocksHTML;*/
 
 
-    if(askBtn)
-    askBtn.onclick = function() {
-        if (!logined) { //testL
-            bootbox.dialog({
-                title: "問一個問題",
-                message: '<div class="row">  ' +
-                    '<div class="col-md-12"> ' +
-                    '<form class="form-horizontal"> ' +
+    if (askBtn)
+        askBtn.onclick = function() {
+            if (!logined) { //testL
+                bootbox.dialog({
+                    title: "問一個問題",
+                    message: '<div class="row">  ' +
+                        '<div class="col-md-12"> ' +
+                        '<form class="form-horizontal"> ' +
 
-                '<div class="form-group"> ' +
-                    '<label class="col-md-4 control-label" for="name" style="font-size:30px">問題:</label> ' +
-                    '<div class="col-md-4"> ' +
-                    '<input id="name" name="name" type="text" placeholder="要問什麼呢?" style=" position:relative;  height:40px;width:300px; top:10px;"  class="form-control input-md"> ' +
-                    '<span class="help-block" style=" position:relative;  top:10px; width:200px; ">(一個可歸類成2大方向的問題)</span> ' +
-                    '</div> ' +
-                    '</div> ' +
-                // '<div class="form-group"> ' +
-                //     '<label class="col-md-4 control-label" for="awesomeness">2 Direction</label> ' +
-                //     '<div class="col-md-4"> <div class="radio">' +
-                //     '<input id="Direction1" name="Direction" type="text" placeholder="First" class="form-control input-md"> ' +
-                //     '<input id="Direction2" name="Direction" type="text" placeholder="Second" class="form-control input-md"> ' +
-                // '</div> ' +
-                //     '</div> ' +
-                //     '</div>' +
-                '<div class="form-group"> ' +
-                    '<label class="col-md-4 control-label" for="name">可填問題相關的資訊</label> ' +
-                    '<div class="col-md-4"> ' +
-                    '<textarea  id="story" name="story" type="text" placeholder="相關的事件or資料..."  rows="10" cols="30"/> ' +
-                // '<span class="help-block">Here goes your name</span> </div> ' +
-                '</div> ' +
-                    '</div> ' +
                     '<div class="form-group"> ' +
-                    '<label class="col-md-4 control-label" for="awesomeness">或上傳張圖片:</label> ' +
-                // '<form action="upload.php" method="POST" name="FileForm" enctype="multipart/form-data">' +
-                '<div class="col-md-4"> <div class="radio">' +
-                    ' <input id="pic"  type="file" accept="image/*" value="上傳文件">' +
-                // '<input type="file" name="file1" size="20" id="file1" />' +
-                //   '上傳圖片預覽:<br>' +
-                '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
-                    '<div id="imgDiv"> </div>' +
-                    ' </div>' +
-                    ' <br>' +
-                // ' <input type="file" value="上傳文件">' +
-
-                ' <script type="text/javascript">' +
-                    '$(document).ready(function() {' +
-
-                '  $("input#pic").uploadPreview({ width: 300, height: 360, imgDiv: "#imgDiv"});' +
-                    '});' +
-
-                '</script>' +
-
-                // '<input type="button" class="btn-warning" value="確定上傳"  /></div>' +
-                '</div> ' +
+                        '<label class="col-md-4 control-label" for="name" style="font-size:30px">問題:</label> ' +
+                        '<div class="col-md-4"> ' +
+                        '<input id="name" name="name" type="text" placeholder="要問什麼呢?" style=" position:relative;  height:40px;width:300px; top:10px;"  class="form-control input-md"> ' +
+                        '<span class="help-block" style=" position:relative;  top:10px; width:200px; ">(一個可歸類成2大方向的問題)</span> ' +
+                        '</div> ' +
+                        '</div> ' +
+                    // '<div class="form-group"> ' +
+                    //     '<label class="col-md-4 control-label" for="awesomeness">2 Direction</label> ' +
+                    //     '<div class="col-md-4"> <div class="radio">' +
+                    //     '<input id="Direction1" name="Direction" type="text" placeholder="First" class="form-control input-md"> ' +
+                    //     '<input id="Direction2" name="Direction" type="text" placeholder="Second" class="form-control input-md"> ' +
+                    // '</div> ' +
+                    //     '</div> ' +
+                    //     '</div>' +
+                    '<div class="form-group"> ' +
+                        '<label class="col-md-4 control-label" for="name">可填問題相關的資訊</label> ' +
+                        '<div class="col-md-4"> ' +
+                        '<textarea  id="story" name="story" type="text" placeholder="相關的事件or資料..."  rows="10" cols="30"/> ' +
+                    // '<span class="help-block">Here goes your name</span> </div> ' +
                     '</div> ' +
+                        '</div> ' +
+                        '<div class="form-group"> ' +
+                        '<label class="col-md-4 control-label" for="awesomeness">或上傳張圖片:</label> ' +
+                    // '<form action="upload.php" method="POST" name="FileForm" enctype="multipart/form-data">' +
+                    '<div class="col-md-4"> <div class="radio">' +
+                        ' <input id="pic"  type="file" accept="image/*" value="上傳文件">' +
+                    // '<input type="file" name="file1" size="20" id="file1" />' +
+                    //   '上傳圖片預覽:<br>' +
+                    '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
+                        '<div id="imgDiv"> </div>' +
+                        ' </div>' +
+                        ' <br>' +
+                    // ' <input type="file" value="上傳文件">' +
 
+                    ' <script type="text/javascript">' +
+                        '$(document).ready(function() {' +
+
+                    '  $("input#pic").uploadPreview({ width: 300, height: 360, imgDiv: "#imgDiv"});' +
+                        '});' +
+
+                    '</script>' +
+
+                    // '<input type="button" class="btn-warning" value="確定上傳"  /></div>' +
+                    '</div> ' +
+                        '</div> ' +
+
+
+                    '</form> </div>  </div>',
+                    buttons: {
+                        success: {
+                            label: "預覽",
+                            className: "btn-success",
+                            callback: function() {
+                                // console.log($("input").files[0]);
+                                var name = $('#name').val();
+
+                                var story = $('#story').val();
+                                var img = $('#pic');
+                                // console.log(img[0].files[0]);
+
+                                // fd.append('file', img);
+                                // console.log(img);
+                                // var answer = $("input[name='awesomeness']:checked").val()
+                                // alert("Hello " + name + "  dir1:" + dir1 + "  dir2:" + dir2 + "   story:" + story);
+                                //...
+                                // var googleLink = $("<a>").attr({
+                                //     'href': 'http://www.google.com'
+                                // }).text("Google");
+                                card = '<div class="post">' +
+                                    '<h2 class="title"><a href="#">' + name + '</a></h2>' +
+                                    '<p class="meta">2014-1-13 12:10 Posted by <a href="#">' + userN2 + '</a></p>' +
+
+                                '<div class="entry" align="center">' +
+                                    '<div class="opt1">' +
+                                    '<a href="#" class="tip1"><span>' + '左方' + '</span></a>' +
+                                    '<img class="man"id="man1" src="img/man1.png"/>' +
+                                    '</div>' +
+                                    '<div class="opt2">' +
+                                    '<a href="#" class="tip2"><span>' + '右方' + '</span></a>' +
+                                    '<img class="man"id="man2" src="img/man2.png"/>' +
+                                    '</div>' +
+                                    '<!-- book start -->' +
+                                    '<figure align="center" id="dd" class="book">' +
+                                    '<!-- Front -->' +
+                                    '<ul class="hardcover_front">' +
+                                    '<li>' +
+                                    '<div class="coverDesign blue">' +
+                                    '<span class="ribbon">hot</span>' +
+                                    '<img style="position:relative;top:10px;" src="' + pictureUrl + '">' +
+                                    '<h1>' + name + '</h1>' +
+
+<<<<<<< HEAD
+                                '</div>' +
+                                    '</li>' +
+                                //        '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
+                                // '<div id="imgDiv"> </div>' +
+                                // ' </div>' +
+                                // '  $("input#pic").uploadPreview({ width: 300, height: 360, imgDiv: "#imgDiv"});' +
+                                // '});' +
+                                '<li></li>' +
+                                    '</ul>' +
+                                    '<!-- Pages -->' +
+                                    '<ul class="page">' +
+                                    '<li></li>' +
+                                    '<li>' +
+                                    story +
+                                // 'Andorid因為買不起Ios'+
+                                '</li>' +
+                                    '<li></li><li></li>' +
+                                    '<li></li>' +
+                                    '</ul>' +
+                                    '<!-- Back -->' +
+                                    '<ul class="hardcover_back">' +
+                                    '<li></li>' +
+                                    '<li></li>' +
+                                    '</ul>' +
+                                    '<ul class="book_spine">' +
+                                    '<li></li>' +
+                                    '<li></li>' +
+                                    '</ul>' +
+
+                                '</li>' +
+                                    '<li>' +
+                                    '<!-- book end -->' +
+                                    '</div>' +
+                                    '<div class="progress">' +
+                                    '<div class="progress-bar progress-bar-red progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">' +
+                                    '</div>' +
+                                    '<div class="progress-bar progress-bar-black progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">' +
+                                    '</div>' +
+
+                                '</div>';
+
+
+
+
+                                /*var card2 ='<div class="card" >'+
+=======
 
                 '</form> </div>  </div>',
                 buttons: {
@@ -218,182 +310,186 @@ objContainer.innerHTML = strBlocksHTML;*/
                         '</div>'+
                         '<div class="progress-bar progress-bar-black progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
                        '</div>'+
-                    '</div>'+
+					'</div>'+
               '</div>';
 
 
- var card2='<div class="post" >'+
-                    '<h2 class="title"><a href="#">'+name +'</a></h2>'+
-                    '<p class="meta">2014-1-13 12:10 Posted by <a href="#">'+userN2+'</a></p>'+
-                    '<div class="entry" align="center">'+
-                      '<div class="opt1">'+
-                        '<a href="#" class="tip1"><span>'+'左方'+'</span></a>'+
-                        '<img class="man"id="man1" style="top:35px;"src="img/man1.png"/>'+
-                      '</div>'+
-                      '<div class="opt2">'+
-                        '<a href="#" class="tip2"><span>'+'右方'+'</span></a>'+
-                        '<img class="man"id="man2" style="top:35px;" src="img/man2.png"/>'+
-                      '</div>'+
-                      '<!-- book start -->'+
-                      '<figure align="center" id="dd" class="book">'+
-                        '<!-- Front -->'+
-                        '<ul class="hardcover_front">'+
-                          '<li>'+
-                            '<div class="coverDesign blue">'+
-                              '<span class="ribbon">hot</span>'+
-                              '<img style="position:relative;top:10px;" src="'+pictureUrl+'">'+
-                              '<h1>'+name+'</h1>'+ 
+
+
+ /*var card2 ='<div class="card" >'+
+>>>>>>> origin/master
+                           ' <div class="title">'+
+                                '<img src=" ' +pictureUrl + '" class="img-circle"/>'+userN2 + ' : ' +name+
                             '</div>'+
-                          '</li>'+
-                    //        '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
-                    // '<div id="imgDiv"> </div>' +
-                    // ' </div>' +
-                    // '  $("input#pic").uploadPreview({ width: 300, height: 360, imgDiv: "#imgDiv"});' +
-                    // '});' +
-                          '<li></li>'+
-                        '</ul>'+
-                        '<!-- Pages -->'+
-                        '<ul class="page">'+
-                          '<li></li>'+
-                          '<li>'+story+// 'Andorid因為買不起Ios'+
-                          '</li>'+
-                          '<li></li><li></li>'+
-                          '<li></li>'+
-                        '</ul>'+
-                        '<!-- Back -->'+
-                        '<ul class="hardcover_back">'+
-                          '<li></li>'+
-                          '<li></li>'+
-                        '</ul>'+
-                        '<ul class="book_spine">'+
-                          '<li></li>'+
-                          '<li></li>'+
-                        '</ul>'+
-                        '<!-- book end -->'+
-                      '</div>'+
-                      '<div class="progress">'+
-                        '<div class="progress-bar progress-bar-red progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
-                        '</div>'+
-                        '<div class="progress-bar progress-bar-black progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
-                       '</div>'+
-                    '</div>'+
-              '</div>';
+                            '<div class="qcontent">'+
+                                '<textarea style="overflow: hidden" class="red" id="Direction1">'+'對'+'</textarea>'+
+                                    '<div class="progress">'+
+                                    '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                                    '</div>'+
+                                    '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
+                                    '</div>'+
+                               ' </div>'+
+                               
+                             '   <textarea style="overflow: hidden"  class="blue" id="Direction2">'+'不對'+'</textarea>'+
+                            '</div>'+
+                        '</div>';*/
+                                /* var card = '<div class="row">' +
+                                '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +
+                                '<div class="col-md-12"> ' +
+                                '<form class="form-horizontal"> ' +
+                                '</br>' +
+                                '</br>' +
+                                '<div class="form-group"> ' +
+                                '<label class="col-md-4 control-label help-block" for="name">' +
+                                '<img height="64px" width="64px" src=' + pictureUrl + ' style="border-radius:40%; border-color:#ffffff; right:"5px">' +
+                                userN2 + ' : ' + '</label> ' +
+                                '<br>' +
+                                '<label class="control-label" style="font-size:30px rows:3">' + name + '</label> ' +
+                                '<div style="align: center;">' +
+                                '</br>' +
+                                '</br>' +
+                                '</br>' +
+                                '</br>' +
+                                '<div class="dd">' +
+                                '</t>' +
+                                '</t>' +
+                                '<div class="blue" style="width:50%;   left:300px;position:relative;"></div>' +
+                                '<div class="red" style="width:50%;"></div>' +
+                                '<textarea id="Direction1" style="left:0px;position:relative; value="對" class="in1" type="text" rows="3" >' +
+                                '對' +
+                                '</textarea>' +
+                                '</t>' +
+                                '</t>' + '</t>' +
+                                '<textarea id="Direction2" style="align:right;left:300px;position:relative;" value="不對" class="in2" type="text" rows="3" >' +
+                                '不對' +
+                                '</textarea>' +
+                                '</div>' +
+                                '</div>' +
+                                // '<div class="form-group"> ' +
+                                // '<label class="col-md-4 control-label" for="name">Question:</label> ' +
+                                // '<div class="col-md-4"> ' +
+                                // '<span class="help-block">' + name + '</span> ' +
+                                // '</div> ' +
+                                // '</div> ' +
+                                // elem.setAttribute("id", "account");
+                                '</form> </div></div>  </div>';*/
 
-                            bootbox.dialog({
-                                title: "預覽問題",
-                                message: card,
-                                buttons: {
-                                    success: {
-                                        label: "發問",
-                                        className: "btn-success",
-                                        callback: function() {
-                                            var dir1 = $('#Direction1').val();
-                                            var dir2 = $('#Direction2').val();
-                                            // alert(dir2);
-                                            // var img = $('#pic').files;
-                                            // console.log(img);
-                                            // console.log(userN2+"..."+name+"..."+img+"..."+story+"..."+dir1+"..."+dir2);
-                                            // saveQ(name,story,"0000",dir1,dir2,fbId);
-                                            // alert(new FormData(img[0].files[0]));
-                                            // save2(img[0].files[0]);
-                                            // save2(new FormData(img[0].files[0]));
-                                            //testl
-                                            $("#aa").prepend(card2);
-                                            var da;
+                                bootbox.dialog({
+                                    title: "預覽問題",
+                                    message: card,
+                                    buttons: {
+                                        success: {
+                                            label: "發問",
+                                            className: "btn-success",
+                                            callback: function() {
+                                                var dir1 = $('#Direction1').val();
+                                                var dir2 = $('#Direction2').val();
+                                                // alert(dir2);
+                                                // var img = $('#pic').files;
+                                                // console.log(img);
+                                                // console.log(userN2+"..."+name+"..."+img+"..."+story+"..."+dir1+"..."+dir2);
+                                                // saveQ(name,story,"0000",dir1,dir2,fbId);
+                                                // alert(new FormData(img[0].files[0]));
+                                                // save2(img[0].files[0]);
+                                                // save2(new FormData(img[0].files[0]));
+                                                //testl
+                                                $("#aa").prepend(card);
+                                                var da;
 
-                                            da = new FormData();
-                                            if(img[0].files[0]){
-                                            da.append('file', img[0].files[0]);
-                                            // da.append('file', img.val());
-                                            // console.log(img[0].files[0]);
-}
-                                            $.ajax({
-                                                url: 'uploadpic.php',
-                                                timeout: 3000,
-                                                data: da,
-                                                // dataType: 'json',
-                                                processData: false,
-                                                contentType: false,
-                                                type: 'POST',
-                                                success: function(data) {
-                                                     
-                                                    saveQ(name, story, data, dir1, dir2, fbId);
-                                                    // console.log(data);
+                                                da = new FormData();
+                                                if (img[0].files[0]) {
+                                                    da.append('file', img[0].files[0]);
+                                                    // da.append('file', img.val());
+                                                    // console.log(img[0].files[0]);
                                                 }
-                                            });
-                                            //     data: data,
-                                            //     processData: false,
-                                            //      contentType: false,
-                                            //     type: 'POST',
+                                                $.ajax({
+                                                    url: 'uploadpic.php',
+                                                    timeout: 3000,
+                                                    data: da,
+                                                    // dataType: 'json',
+                                                    processData: false,
+                                                    contentType: false,
+                                                    type: 'POST',
+                                                    success: function(data) {
 
-                                            //     // This will override the content type header, 
-                                            //     // regardless of whether content is actually sent.
-                                            //     // Defaults to 'application/x-www-form-urlencoded'
-                                            //     contentType: 'multipart/form-data', 
+                                                        saveQ(name, story, data, dir1, dir2, fbId);
+                                                        // console.log(data);
+                                                    }
+                                                });
+                                                //     data: data,
+                                                //     processData: false,
+                                                //      contentType: false,
+                                                //     type: 'POST',
 
-                                            //     //Before 1.5.1 you had to do this:
-                                            //     // beforeSend: function (x) {
-                                            //     //     if (x && x.overrideMimeType) {
-                                            //     //         x.overrideMimeType("multipart/form-data");
-                                            //     //     }
-                                            //     // },
-                                            //     // Now you should be able to do this:
-                                            //     mimeType: 'multipart/form-data',    //Property added in 1.5.1
+                                                //     // This will override the content type header, 
+                                                //     // regardless of whether content is actually sent.
+                                                //     // Defaults to 'application/x-www-form-urlencoded'
+                                                //     contentType: 'multipart/form-data', 
 
-                                            //     success: function (data) {
-                                            //         alert(data);
-                                            //     }
-                                            // });
+                                                //     //Before 1.5.1 you had to do this:
+                                                //     // beforeSend: function (x) {
+                                                //     //     if (x && x.overrideMimeType) {
+                                                //     //         x.overrideMimeType("multipart/form-data");
+                                                //     //     }
+                                                //     // },
+                                                //     // Now you should be able to do this:
+                                                //     mimeType: 'multipart/form-data',    //Property added in 1.5.1
 
-
-
-
-
-
-
+                                                //     success: function (data) {
+                                                //         alert(data);
+                                                //     }
+                                                // });
 
 
-                                            //
-                                            // save(name,story,img[0].files[0],dir1,dir2,fbId);
-                                            // alert(img[0]);
 
-                                            // saveQ(name,story,img[0].files[0],dir1,dir2,fbId);
 
-                                             
+
+
+
+
+
+                                                //
+                                                // save(name,story,img[0].files[0],dir1,dir2,fbId);
+                                                // alert(img[0]);
+
+                                                // saveQ(name,story,img[0].files[0],dir1,dir2,fbId);
+
+
+                                            }
                                         }
+
+
                                     }
-
-
-                                }
-                                // card.append(b);
-                            });
-                            //...
+                                    // card.append(b);
+                                });
+                                //...
+                            }
                         }
+
                     }
 
-                }
-
-            });
-        } else {$('#DemoModal').modal('show');
-            // BootstrapDialog.show({
-            //     title: 'Login',
-            //     message: 'Login to ask question',
-            //     cssClass: 'login-dialog',
-            //     buttons: [{
-            //         label: 'Login with Facebook',
-            //         cssClass: 'btn-primary',
-            //         action: function(dialog) {
-            //             fbLogin();
-            //         }
-            //     }, {
-            //         label: 'Cancel',
-            //         cssClass: 'btn-cancel',
-            //         action: function(dialog) {}
-            //     }]
-            // });
+                });
+            } else {
+                $('#DemoModal').modal('show');
+                // BootstrapDialog.show({
+                //     title: 'Login',
+                //     message: 'Login to ask question',
+                //     cssClass: 'login-dialog',
+                //     buttons: [{
+                //         label: 'Login with Facebook',
+                //         cssClass: 'btn-primary',
+                //         action: function(dialog) {
+                //             fbLogin();
+                //         }
+                //     }, {
+                //         label: 'Cancel',
+                //         cssClass: 'btn-cancel',
+                //         action: function(dialog) {}
+                //     }]
+                // });
+            }
         }
-    }
-    /*reB.onclick = function() {
+        /*reB.onclick = function() {
         // form00.userName.innerTex='';
         // alert("---"+form00.userName.innerText);
         // alert("---"+inn.value);
@@ -420,7 +516,7 @@ objContainer.innerHTML = strBlocksHTML;*/
         });
         // alert("....");
     }*/
-    /*  $("reB").click(function(){
+        /*  $("reB").click(function(){
                         $.ajax({url:"fightCard.php",success:function(result){
                         alert("....");
                         // $("#form0").userName.html("result");
@@ -479,7 +575,7 @@ objContainer.innerHTML = strBlocksHTML;*/
             // data: {functionname: 'test',arguments:['f','ox']},
             success: function(data0) {
                 // alert("登入成功");
-                $('#inout').innerText='logout';
+                $('#inout').innerText = 'logout';
                 $('#DemoModal').modal('hide');
             }
         });
@@ -689,17 +785,19 @@ objContainer.innerHTML = strBlocksHTML;*/
     //                     });
     //                     });*/
     // }
-$(document).ready(function(){
-    $('.open-modal').click(function(){
-        $('#DemoModal').modal('show');
-$('#facebook').click(function(){
-        fbLogin();
-    });  }); 
-    $('.close-modal').click(function(){
-        $('#DemoModal').modal('hide');
-        $('#DemoModal2').modal('hide');
-    }); 
-});
+    $(document).ready(function() {
+        $('.open-modal').click(function() {
+            $('#DemoModal').modal('show');
+            $('#facebook').click(function() {
+                fbLogin();
+            });
+        });
+        $('.close-modal').click(function() {
+            $('#DemoModal').modal('hide');
+            $('#DemoModal2').modal('hide');
+        });
+    });
+
     function loginStatus() {
         FB.getLoginStatus(function(res) {
             if (res.status == "connected") {
@@ -853,89 +951,90 @@ $('#facebook').click(function(){
 }
 jQuery(document).ready(function() {
     // alert("0");
-    
-$('#dd').click(function() {
-$('#DemoModal2').modal('show');
-                    // alert("..");
-                       // window.open ('ask.html','_self',false);
-                  
-    // $('#big').modal('show');
-//    $('#dd').animate({
-//    height: ($(this).height()*2),
-//    width: ($(this).width()*2)
-// }, 1000);
-});
 
-// $('#loginButton').click(function() {
+    $('#dd').click(function() {
+        $('#DemoModal2').modal('show');
+        // alert("..");
+        // window.open ('ask.html','_self',false);
 
-// bootbox.dialog({
-                
-//                 message: 
-// '<div id="loginform">'+
-// '<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>'+
-// '<div id="mainlogin">'+
-// '<div id="or">or</div>'+
-// '<h1>Log in with awesome new thing</h1>'+
-// '<form action="#">'+
-// '<input id="bootbox1" type="text" placeholder="username or email" value="" required>'+
-// '<input id="bootbox2" type="password" placeholder="password" value="" required>'+
-// '<button  id="bootboxBtn"  type="submit"><i class="fa fa-arrow-right"></i></button>'+
-// '</form>'+
-// '<div id="note"><a href="#">Forgot your password?</a></div>'+
-// '</div>'+
-// '</div>'
-               
-//             }
-//         );
+        // $('#big').modal('show');
+        //    $('#dd').animate({
+        //    height: ($(this).height()*2),
+        //    width: ($(this).width()*2)
+        // }, 1000);
+    });
 
-// });
-   /* checkNewUpdate();
+    // $('#loginButton').click(function() {
+
+    // bootbox.dialog({
+
+    //                 message: 
+    // '<div id="loginform">'+
+    // '<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>'+
+    // '<div id="mainlogin">'+
+    // '<div id="or">or</div>'+
+    // '<h1>Log in with awesome new thing</h1>'+
+    // '<form action="#">'+
+    // '<input id="bootbox1" type="text" placeholder="username or email" value="" required>'+
+    // '<input id="bootbox2" type="password" placeholder="password" value="" required>'+
+    // '<button  id="bootboxBtn"  type="submit"><i class="fa fa-arrow-right"></i></button>'+
+    // '</form>'+
+    // '<div id="note"><a href="#">Forgot your password?</a></div>'+
+    // '</div>'+
+    // '</div>'
+
+    //             }
+    //         );
+
+    // });
+    /* checkNewUpdate();
     interval = setInterval("checkNewUpdate()", 4000); //Set interval for accident checking ajax*/
-// interval = setInterval("testt()", 4000); //Set interval for accident checking ajax
+    // interval = setInterval("testt()", 4000); //Set interval for accident checking ajax
 });
 // var a=0;
-  function testt() {
-       console.log("now: "+currCardId);
-        // alert("now: "+currCardId);
+function testt() {
+    console.log("now: " + currCardId);
+    // alert("now: "+currCardId);
     var formData = {
         currCardId: currCardId
     };
-        $.ajax({
-          type: "POST",
+    $.ajax({
+        type: "POST",
         timeout: 3000,
         url: 'getHomePageDataTest.php',
         // 　contentType: "application/json",
 
         data: formData,
-            success: function(data) {
-                console.log("max: "+data);
-                // alert(data);
-            }
-        });
-    }
+        success: function(data) {
+            console.log("max: " + data);
+            // alert(data);
+        }
+    });
+}
+
 function checkNewUpdate() {
     // alert("...");
     check(function(output) {
         // console.log(output);
-         // alert(currCardId);
-         // alert(output);
-          console.log("in0  "+output.length);
-        if(output.length){
-             console.log("in");
-        var obj = JSON.parse(output);
+        // alert(currCardId);
+        // alert(output);
+        console.log("in0  " + output.length);
+        if (output.length) {
+            console.log("in");
+            var obj = JSON.parse(output);
 
-        // console.log("0.0  "+obj.question_img);
-  console.log("in2");
-        if (obj.length > 0) {
-              console.log("in3");
-            currCardId = obj[obj.length - 1].question_id;
-            
-            // alert(obj.price);
-            // console.log(obj.length+"  "+obj[1].question_img);
-            for (var i = 0 ; i < obj.length ; i++) {
-                // for (var i = obj.length - 1; i >= 0; i--) {
-console.log("aa  "+obj[i].question_title );
-               /* var card = '<div class="row" id="card' + obj[i].question_id + '">' +
+            // console.log("0.0  "+obj.question_img);
+            console.log("in2");
+            if (obj.length > 0) {
+                console.log("in3");
+                currCardId = obj[obj.length - 1].question_id;
+
+                // alert(obj.price);
+                // console.log(obj.length+"  "+obj[1].question_img);
+                for (var i = 0; i < obj.length; i++) {
+                    // for (var i = obj.length - 1; i >= 0; i--) {
+                    console.log("aa  " + obj[i].question_title);
+                    /* var card = '<div class="row" id="card' + obj[i].question_id + '">' +
                     '<div  class="drop-shadow curved curved-vt-2"    style="width:500px; height:300px;>"  ' +
                     '<div class="col-md-12"> ' +
                     '<form class="form-horizontal"> ' +
@@ -970,27 +1069,28 @@ console.log("aa  "+obj[i].question_title );
                     '</div>' +
                     '</div>';*/
 
-                    var card ='<div class="card" id="card' + obj[i].question_id + '">'+
-                           ' <div class="title">'+
-                                '<img src=" ' + obj[i].head + '" class="img-circle"/>'+obj[i].name + ' : ' +obj[i].question_title+
-                            '</div>'+
-                            '<div class="qcontent">'+
-                                '<textarea style="overflow: hidden" class="red">'+obj[i].question_left +'</textarea>'+
-                                    '<div class="progress">'+
-                                    '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
-                                    '</div>'+
-                                    '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
-                                    '</div>'+
-                               ' </div>'+
-                             '   <textarea style="overflow: hidden" class="blue">'+obj[i].question_right +'</textarea>'+
-                            '</div>'+
+                    var card = '<div class="card" id="card' + obj[i].question_id + '">' +
+                        ' <div class="title">' +
+                        '<img src=" ' + obj[i].head + '" class="img-circle"/>' + obj[i].name + ' : ' + obj[i].question_title +
+                        '</div>' +
+                        '<div class="qcontent">' +
+                        '<textarea style="overflow: hidden" class="red">' + obj[i].question_left + '</textarea>' +
+                        '<div class="progress">' +
+                        '<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">' +
+                        '</div>' +
+                        '<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">' +
+                        '</div>' +
+                        ' </div>' +
+                        '   <textarea style="overflow: hidden" class="blue">' + obj[i].question_right + '</textarea>' +
+                        '</div>' +
                         '</div>';
-                // alert(obj[i].price);
-                // $("aa").append(card);
-                $('#aa').prepend(card);
-                // $("aa").prependTo(card);
-            };
-        }}
+                    // alert(obj[i].price);
+                    // $("aa").append(card);
+                    $('#aa').prepend(card);
+                    // $("aa").prependTo(card);
+                };
+            }
+        }
     });
 }
 
@@ -998,7 +1098,7 @@ function check(handleData) {
     var formData = {
         currCardId: currCardId
     };
-    console.log("check  "+currCardId);
+    console.log("check  " + currCardId);
     jQuery.ajax({
         type: "POST",
         timeout: 3000,
