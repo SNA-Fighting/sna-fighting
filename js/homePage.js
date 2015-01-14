@@ -164,18 +164,17 @@ objContainer.innerHTML = strBlocksHTML;*/
                             // var googleLink = $("<a>").attr({
                             //     'href': 'http://www.google.com'
                             // }).text("Google");
- card='<div class="post">'+
+ card='<div class="post" style="top:-10px;width:100%;left:-50px;">'+
                     '<h2 class="title"><a href="#">'+name +'</a></h2>'+
                     '<p class="meta">2014-1-13 12:10 Posted by <a href="#">'+userN2+'</a></p>'+
-                    
                     '<div class="entry" align="center">'+
                       '<div class="opt1">'+
                         '<a href="#" class="tip1"><span>'+'左方'+'</span></a>'+
-                        '<img class="man"id="man1" src="img/man1.png"/>'+
+                        '<img class="man"id="man1" style="top:35px;"src="img/man1.png"/>'+
                       '</div>'+
                       '<div class="opt2">'+
                         '<a href="#" class="tip2"><span>'+'右方'+'</span></a>'+
-                        '<img class="man"id="man2" src="img/man2.png"/>'+
+                        '<img class="man"id="man2" style="top:35px;" src="img/man2.png"/>'+
                       '</div>'+
                       '<!-- book start -->'+
                       '<figure align="center" id="dd" class="book">'+
@@ -185,8 +184,7 @@ objContainer.innerHTML = strBlocksHTML;*/
                             '<div class="coverDesign blue">'+
                               '<span class="ribbon">hot</span>'+
                               '<img style="position:relative;top:10px;" src="'+pictureUrl+'">'+
-                              '<h1>'+name+'</h1>'+
-                              
+                              '<h1>'+name+'</h1>'+ 
                             '</div>'+
                           '</li>'+
                     //        '<div style="width:300px; height: 360px; overflow:hidden; position:relative; top:10px; border-width:medium; border-style:dashed;">' +
@@ -199,9 +197,7 @@ objContainer.innerHTML = strBlocksHTML;*/
                         '<!-- Pages -->'+
                         '<ul class="page">'+
                           '<li></li>'+
-                          '<li>'+
-story+
-                            // 'Andorid因為買不起Ios'+
+                          '<li>'+story+// 'Andorid因為買不起Ios'+
                           '</li>'+
                           '<li></li><li></li>'+
                           '<li></li>'+
@@ -215,9 +211,6 @@ story+
                           '<li></li>'+
                           '<li></li>'+
                         '</ul>'+
-                        
-                      '</li>'+
-                      '<li>'+
                         '<!-- book end -->'+
                       '</div>'+
                       '<div class="progress">'+
@@ -225,7 +218,7 @@ story+
                         '</div>'+
                         '<div class="progress-bar progress-bar-black progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">'+
                        '</div>'+
-            
+					'</div>'+
               '</div>';
 
 
