@@ -88,7 +88,7 @@ objContainer.innerHTML = strBlocksHTML;*/
 
     if(askBtn)
     askBtn.onclick = function() {
-        if (logined) { //testL
+        if (!logined) { //testL
             bootbox.dialog({
                 title: "問一個問題",
                 message: '<div class="row">  ' +
