@@ -214,3 +214,6 @@ a.tip2 span:after {
 	left:45%;
 	top:10%;
 }
+.book{
+	transform:scale(1.5);
+}
