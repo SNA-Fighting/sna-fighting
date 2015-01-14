@@ -178,10 +178,16 @@ a.tip2 span:after {
 	left:20%;
 	z-index:1;
 }
+.label{
+	position: relative;
+	left:33%;
+	top:30px;
+	font-size:25px;
+	background-color:rgb(204,0,1);
+}
 .progress{
 	position: relative;
 	border:3px solid rgba(0,0,0,0.5);
-	display:inline-block;
 	margin:top;
 	opacity: 0.8;
 }
@@ -196,7 +202,11 @@ a.tip2 span:after {
 .progress-bar-black{
 	background-color:rgba(0,0,0,1);
 }
-
+#votebar{
+	top:140px;
+}
 .entry{
-	height:300px;
+	position:relative;
+	left:45%;
+	top:50px;
 }
